@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Referencia visual del sistema de diseño — CV digital Sofía Ramos Ferra. Colores, tipografía, espaciado, formas y componentes según DESIGN.md.">
+<title>Sistema de diseño — Sofía Ramos Ferra</title>
+<!--
+  TOKENS FUENTE: DESIGN.md (front matter YAML)
+  colors.primary #113051 / background #F9F7EF / surface #FFFFFF
+  muted rgba(17,48,81,.72) / border-subtle rgba(17,48,81,.18) / overlay rgba(17,48,81,.06)
+  typography: Handsome Pro (display) + Kumbh Sans (resto)
+  spacing base 8px / rounded sm 8 md 12 lg 16 pill 999 circle 50%
+-->
+<style>
+@font-face {
+  font-family: 'Playwrite US Trad';
+  src: url('assets/fonts/Playwrite_US_Trad/PlaywriteUSTrad-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 400; font-display: swap;
+}
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* === TOKENS (DESIGN.md) === */
+  --colors-primary:#113051;
+  --colors-background:#F9F7EF;
+  --colors-surface:#FFFFFF;
+  --colors-ink:#113051;
+  --colors-ink-on-primary:#F9F7EF;
+  --colors-muted:rgba(17,48,81,.72);
+  --colors-line:#113051;
+  --colors-border-subtle:rgba(17,48,81,.18);
+  --colors-overlay:rgba(17,48,81,.06);
+  --font-display:'Handsome Pro','Playwrite US Trad',cursive;
+  --font-sans:'Kumbh Sans',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --fs-display:clamp(48px,6vw,76px);
+  --fs-heading:28px; --fs-sub:20px; --fs-body:16px; --fs-caption:14px;
+  --fs-number:clamp(40px,5vw,64px);
+  --sp-xs:4px; --sp-sm:8px; --sp-md:16px; --sp-lg:24px;
+  --sp-xl:32px; --sp-2xl:48px; --sp-3xl:64px; --sp-4xl:96px;
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-pill:999px; --r-circle:50%;
+  --shadow-card:0 1px 2px rgba(17,48,81,.06),0 4px 16px rgba(17,48,81,.06);
+  --max:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{
+  margin:0; font-family:var(--font-sans); font-size:var(--fs-body); line-height:1.6;
+  color:var(--colors-ink); background:var(--colors-background);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.07 0 0 0 0 0.19 0 0 0 0 0.32 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+::selection{background:var(--colors-primary);color:var(--colors-ink-on-primary)}
+a{color:var(--colors-primary)}
+:focus-visible{outline:3px solid var(--colors-primary);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--colors-primary);color:var(--colors-ink-on-primary);padding:8px 16px;z-index:99;border-radius:0 0 var(--r-sm) 0}
+.skip:focus{left:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--sp-lg)}
+.site-header{border-bottom:1px solid var(--colors-primary);position:sticky;top:0;background:var(--colors-primary);color:var(--colors-ink-on-primary);z-index:10}
+.site-header .wrap{display:flex;align-items:center;gap:var(--sp-lg);padding-top:var(--sp-sm);padding-bottom:var(--sp-sm)}
+.site-header a{color:var(--colors-ink-on-primary)}
+.site-header :focus-visible{outline-color:var(--colors-ink-on-primary)}
+.brand{display:inline-flex;align-items:flex-start;text-decoration:none;color:var(--colors-primary)}
+.brand img{height:44px;width:auto;max-width:100%;object-fit:contain;flex-shrink:0;align-self:flex-start;display:block;aspect-ratio:auto;transition:transform .2s ease}
+.brand:hover img,.brand:focus-visible img{transform:scale(1.06) rotate(-2deg)}
+nav.main{margin-left:auto}
+nav.main ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav.main a{display:inline-block;text-decoration:none;font-size:14px;font-weight:600;padding:8px 10px;border-radius:var(--r-sm)}
+nav.main a:hover,nav.main a[aria-current="true"]{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--colors-ink-on-primary);border-radius:var(--r-pill);color:var(--colors-ink-on-primary);font:inherit;font-weight:600;padding:8px 16px;cursor:pointer}
+.hero{padding:var(--sp-3xl) 0 var(--sp-2xl);border-bottom:1px solid var(--colors-border-subtle)}
+.kicker{font-size:14px;font-weight:600;letter-spacing:.06em;margin:0 0 var(--sp-md)}
+.hero h1{font-family:var(--font-display);font-weight:400;font-size:var(--fs-display);line-height:1.3;margin:0 0 var(--sp-lg);padding:.1em 0;overflow:visible}
+.hero p.lead{max-width:62ch;margin:0 0 var(--sp-lg)}
+.hero .meta{display:flex;gap:var(--sp-sm);flex-wrap:wrap;font-size:var(--fs-caption);color:var(--colors-muted)}
+.hero .meta span{border:1px solid var(--colors-border-subtle);border-radius:var(--r-pill);padding:4px 12px;background:var(--colors-surface)}
+.num-row{display:flex;gap:var(--sp-lg);flex-wrap:wrap;margin-top:var(--sp-lg)}
+.num{flex:1 1 140px;border-top:1px solid var(--colors-primary);padding-top:var(--sp-sm)}
+.num b{display:block;font-size:var(--fs-number);line-height:1;font-weight:700}
+.num span{font-size:var(--fs-caption);color:var(--colors-muted);font-weight:500}
+section.block{padding:var(--sp-3xl) 0;border-bottom:1px solid var(--colors-border-subtle)}
+.sec-head{display:flex;align-items:baseline;gap:var(--sp-md);margin-bottom:var(--sp-sm);flex-wrap:wrap}
+.sec-head .n{font-size:var(--fs-number);font-weight:700;line-height:1}
+.sec-head h2{font-size:var(--fs-heading);line-height:1.2;margin:0}
+.sec-head p{flex-basis:100%;margin:0 0 var(--sp-lg);color:var(--colors-muted);font-size:var(--fs-caption);max-width:80ch}
+h3{font-size:var(--fs-sub);margin:var(--sp-xl) 0 var(--sp-md)}
+code.token{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85em;background:var(--colors-surface);border:1px solid var(--colors-border-subtle);border-radius:6px;padding:1px 6px;white-space:nowrap}
+.swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:var(--sp-lg)}
+.swatch{background:var(--colors-background);border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);box-shadow:var(--shadow-card);overflow:hidden}
+.swatch .chip{height:120px;display:flex;align-items:flex-end;justify-content:space-between;padding:var(--sp-sm) var(--sp-md);font-size:12px;font-weight:600}
+.swatch .info{padding:var(--sp-md)}
+.swatch .info h3{margin:0 0 4px;font-size:16px}
+.swatch .info p{margin:0 0 8px;font-size:14px}
+.swatch .row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.hex{font-family:ui-monospace,Menlo,monospace;font-size:13px}
+.copy{background:none;border:1px solid var(--colors-primary);color:var(--colors-primary);border-radius:var(--r-pill);padding:4px 12px;font:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.copy:hover{background:var(--colors-primary);color:var(--colors-ink-on-primary)}
+.badge{font-size:12px;font-weight:600;color:var(--colors-muted)}
+.badge.pass{color:#1c6b2a}
+.spec{border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);background:var(--colors-background);box-shadow:var(--shadow-card);padding:var(--sp-lg);margin-bottom:var(--sp-lg)}
+.spec .sample{margin:0 0 12px}
+.s-display{font-family:var(--font-display);font-size:var(--fs-display);line-height:1.3;display:block;padding:.1em 0;overflow:visible}
+.s-heading{font-size:var(--fs-heading);font-weight:700;line-height:1.2}
+.s-sub{font-size:var(--fs-sub);font-weight:600}
+.s-body{font-size:var(--fs-body)}
+.s-strong{font-size:var(--fs-body);font-weight:600}
+.s-caption{font-size:var(--fs-caption);font-weight:500;color:var(--colors-muted)}
+.s-number{font-size:var(--fs-number);font-weight:700;line-height:1}
+.note{font-size:var(--fs-caption);color:var(--colors-muted)}
+.font-note{background:var(--colors-surface);border:1px dashed var(--colors-border-subtle);border-radius:var(--r-md);padding:var(--sp-md);font-size:14px}
+.scale{display:flex;align-items:flex-end;gap:var(--sp-md);flex-wrap:wrap;margin-bottom:var(--sp-lg)}
+.bar{display:flex;flex-direction:column;gap:6px;align-items:center;font-size:12px;color:var(--colors-muted)}
+.bar i{display:block;background:var(--colors-primary);border-radius:2px;min-width:32px}
+.grid-demo{border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);padding:var(--sp-md);background:var(--colors-surface)}
+.grid12{display:grid;grid-template-columns:repeat(12,1fr);gap:12px}
+.grid12 div{background:var(--colors-overlay);border:1px solid var(--colors-border-subtle);border-radius:6px;min-height:44px;display:flex;align-items:center;justify-content:center;font-size:11px;color:var(--colors-muted)}
+.edit-demo{display:grid;grid-template-columns:repeat(12,1fr);gap:12px;margin-top:12px}
+.edit-demo figure{margin:0;background:var(--colors-primary);color:var(--colors-ink-on-primary);border-radius:var(--r-lg);min-height:90px;display:flex;align-items:flex-end;padding:12px;font-size:13px;font-weight:600}
+.edit-demo .a{grid-column:span 7}.edit-demo .b{grid-column:span 5;background:var(--colors-surface);color:var(--colors-primary);border:1px solid var(--colors-border-subtle)}
+.radii{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:var(--sp-lg)}
+.radius-card{border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);background:var(--colors-background);box-shadow:var(--shadow-card);padding:var(--sp-md);text-align:center}
+.radius-card .box{width:100%;height:72px;background:var(--colors-surface);border:1px solid var(--colors-border-subtle);margin-bottom:8px}
+.lines{display:flex;flex-direction:column;gap:var(--sp-md);margin-top:var(--sp-lg)}
+.lines hr{border:none;border-top:1px solid var(--colors-primary);margin:0}
+.u{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:4px}
+.elev{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:var(--sp-lg)}
+.elev div{border-radius:var(--r-md);padding:var(--sp-lg);background:var(--colors-background);border:1px solid var(--colors-border-subtle)}
+.e0{box-shadow:none!important}.e1{box-shadow:var(--shadow-card)}
+.comp-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--sp-lg)}
+.card{background:var(--colors-background);border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);box-shadow:var(--shadow-card);padding:var(--sp-lg)}
+.card h3{margin-top:0}
+.btn{display:inline-flex;align-items:center;gap:8px;border-radius:var(--r-pill);padding:8px 24px;font-weight:600;font-size:16px;text-decoration:none;cursor:pointer;border:1px solid var(--colors-primary);transition:background .15s}
+.btn-primary{background:var(--colors-primary);color:var(--colors-ink-on-primary)}
+.btn-primary:hover .arr{transform:translateX(3px)}
+.btn-secondary{background:var(--colors-background);color:var(--colors-primary)}
+.btn-secondary:hover{background:var(--colors-overlay)}
+.btn .arr{display:inline-block;transition:transform .15s}
+.btn-row{display:flex;gap:var(--sp-md);flex-wrap:wrap}
+.link-fine{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;font-weight:600}
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.skill-tags li{border:1px solid var(--colors-border-subtle);background:var(--colors-background);border-radius:var(--r-md);padding:6px 12px;font-size:14px;box-shadow:var(--shadow-card)}
+.contact-row{display:flex;gap:var(--sp-md);flex-wrap:wrap}
+.contact-card{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);padding:10px 16px;background:var(--colors-background);box-shadow:var(--shadow-card);text-decoration:none;color:var(--colors-primary);font-weight:600;font-size:14px}
+.contact-card .dot{width:28px;height:28px;border-radius:var(--r-circle);background:var(--colors-primary);color:var(--colors-ink-on-primary);display:inline-flex;align-items:center;justify-content:center;font-size:14px}
+.nav-sample{display:flex;gap:var(--sp-md);flex-wrap:wrap}
+.nav-sample a{display:flex;align-items:baseline;gap:8px;text-decoration:none;border-bottom:1px solid var(--colors-primary);padding-bottom:4px}
+.nav-sample b{font-size:28px}
+.proj{background:var(--colors-surface);border:1px solid var(--colors-border-subtle);border-radius:var(--r-lg);overflow:hidden}
+.proj .img{aspect-ratio:16/9;background:linear-gradient(135deg,#dfe7ee,#f4efe0);display:flex;align-items:center;justify-content:center;color:var(--colors-muted);font-size:13px}
+.proj .cap{padding:var(--sp-md);font-size:var(--fs-caption);color:var(--colors-muted)}
+.proj .cap strong{display:block;color:var(--colors-primary);font-size:16px}
+.tool-row{display:flex;gap:var(--sp-md);flex-wrap:wrap}
+.tool{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500}
+.tool i{width:32px;height:32px;border-radius:var(--r-sm);background:var(--colors-primary);color:var(--colors-ink-on-primary);display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-weight:700;font-size:13px}
+.dd{display:grid;grid-template-columns:1fr 1fr;gap:var(--sp-lg)}
+@media(max-width:760px){.dd{grid-template-columns:1fr}}
+.do,.dont{border-radius:var(--r-md);padding:var(--sp-lg);border:1px solid var(--colors-border-subtle);background:var(--colors-background)}
+.dont{background:var(--colors-surface)}
+.do h3,.dont h3{margin-top:0}
+.do ul,.dont ul{margin:0;padding-left:20px;font-size:15px}
+.do li,.dont li{margin-bottom:8px}
+footer{padding:var(--sp-2xl) 0 var(--sp-3xl);font-size:var(--fs-caption);color:var(--colors-muted)}
+#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--colors-primary);color:var(--colors-ink-on-primary);padding:10px 20px;border-radius:var(--r-pill);font-size:14px;font-weight:600;opacity:0;pointer-events:none;transition:opacity .2s}
+#toast.show{opacity:1}
+@media(max-width:900px){
+  nav.main{display:none}
+  nav.main.open{display:block;position:absolute;top:100%;left:0;right:0;background:var(--colors-primary);border-bottom:1px solid var(--colors-primary)}
+  nav.main.open ul{flex-direction:column;padding:var(--sp-md)}
+  .menu-btn{display:inline-block}
+  .edit-demo .a,.edit-demo .b{grid-column:span 12}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/logo-sofia-beige.png" alt="Sofía Ramos — inicio" width="357" height="240"></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menú</button>
+    <nav class="main" id="mainNav" aria-label="Secciones del sistema">
+      <ul>
+        <li><a href="#colores">Colores</a></li>
+        <li><a href="#tipografia">Tipografía</a></li>
+        <li><a href="#espaciado">Espaciado</a></li>
+        <li><a href="#formas">Formas</a></li>
+        <li><a href="#elevacion">Elevación</a></li>
+        <li><a href="#componentes">Componentes</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+<div class="wrap">
+  <div class="hero" id="top">
+    <p class="kicker">REFERENCIA VISUAL · APLICA TOKENS DE <code class="token">DESIGN.md</code></p>
+    <h1>Creativa, profesional, moderna y divertida.</h1>
+    <p class="lead">Firma manuscrita sobre estructura editorial: azul profundo <code class="token">{colors.primary}</code> + beige con textura <code class="token">{colors.background}</code>, display puntual y Kumbh Sans funcional, retícula de 12 columnas y detalles sobrios.</p>
+    <div class="meta" aria-label="Tokens base">
+      <span>{colors.primary} #113051</span>
+      <span>{colors.background} #F9F7EF</span>
+      <span>{typography.display.fontFamily} Handsome Pro</span>
+      <span>{typography.body.fontFamily} Kumbh Sans</span>
+      <span>{spacing.base} 8px</span>
+    </div>
+    <div class="num-row" aria-label="Secciones del CV">
+      <div class="num"><b>01</b><span>Sobre mí</span></div>
+      <div class="num"><b>02</b><span>Habilidades</span></div>
+      <div class="num"><b>03</b><span>Herramientas</span></div>
+      <div class="num"><b>04</b><span>Educación</span></div>
+      <div class="num"><b>05</b><span>Proyectos</span></div>
+      <div class="num"><b>06</b><span>Contacto</span></div>
+    </div>
+  </div>
+
+  <section class="block" id="colores" aria-labelledby="h-colores">
+    <div class="sec-head"><span class="n" aria-hidden="true">01</span><h2 id="h-colores">Colores</h2>
+    <p>Dos protagonistas + neutros de apoyo. La variedad sale de composición, escala y textura. Toca “Copiar” para usar el valor.</p></div>
+    <div class="swatches">
+      <article class="swatch"><div class="chip" style="background:#113051;color:#F9F7EF"><span>Primary</span><span>Aa</span></div>
+        <div class="info"><h3>Identidad · <code class="token">{colors.primary}</code></h3>
+        <p>Títulos, números, líneas, nav, botones y bloques separadores.</p>
+        <div class="row"><span class="hex">#113051</span><button class="copy" data-copy="#113051">Copiar</button><span class="badge pass">12.5:1 sobre beige ✓ AA</span></div></div></article>
+      <article class="swatch"><div class="chip" style="background:#F9F7EF;color:#113051;border-bottom:1px solid rgba(17,48,81,.18)"><span>Background</span><span>Aa</span></div>
+        <div class="info"><h3>Fondo · <code class="token">{colors.background}</code></h3>
+        <p>Beige cálido con textura de papel sutil pero visible.</p>
+        <div class="row"><span class="hex">#F9F7EF</span><button class="copy" data-copy="#F9F7EF">Copiar</button><span class="badge">Base de página</span></div></div></article>
+      <article class="swatch"><div class="chip" style="background:#FFFFFF;color:#113051;border-bottom:1px solid rgba(17,48,81,.18)"><span>Surface</span><span>Aa</span></div>
+        <div class="info"><h3>Apoyo · <code class="token">{colors.surface}</code></h3>
+        <p>Fondos de foto, mockups. No compite con los principales.</p>
+        <div class="row"><span class="hex">#FFFFFF</span><button class="copy" data-copy="#FFFFFF">Copiar</button><span class="badge pass">13.4:1 con azul ✓</span></div></div></article>
+      <article class="swatch"><div class="chip" style="background:#F9F7EF;color:rgba(17,48,81,.72)"><span>Muted · Aa</span><span>14px</span></div>
+        <div class="info"><h3>Secundario · <code class="token">{colors.muted}</code></h3>
+        <p>Captions y metadatos (Nombre · Categoría · Año).</p>
+        <div class="row"><span class="hex">rgba(17,48,81,.72)</span><button class="copy" data-copy="rgba(17, 48, 81, 0.72)">Copiar</button><span class="badge pass">5.4:1 sobre beige ✓</span></div></div></article>
+      <article class="swatch"><div class="chip" style="background:#F9F7EF;color:#113051;border:1px dashed rgba(17,48,81,.18)"><span>Borde</span><span>1px</span></div>
+        <div class="info"><h3>Marco · <code class="token">{colors.border-subtle}</code></h3>
+        <p>Marcos finos de tarjeta. Solo decorativo, no texto.</p>
+        <div class="row"><span class="hex">rgba(17,48,81,.18)</span><button class="copy" data-copy="rgba(17, 48, 81, 0.18)">Copiar</button></div></div></article>
+      <article class="swatch"><div class="chip" style="background:#F9F7EF;color:#113051;box-shadow:inset 0 0 0 12px rgba(17,48,81,.06)"><span>Overlay</span><span>sombra</span></div>
+        <div class="info"><h3>Sombra sutil · <code class="token">{colors.overlay}</code></h3>
+        <p>Separar tarjetas, nunca sombras duras ni largas.</p>
+        <div class="row"><span class="hex">rgba(17,48,81,.06)</span><button class="copy" data-copy="rgba(17, 48, 81, 0.06)">Copiar</button></div></div></article>
+    </div>
+    <h3>Combinaciones</h3>
+    <div class="comp-grid">
+      <div class="card" style="background:var(--colors-primary);color:var(--colors-ink-on-primary);border-color:var(--colors-primary)"><strong>Bloque separador</strong><br>Fondo <code class="token">{colors.primary}</code> + texto <code class="token">{colors.ink-on-primary}</code></div>
+      <div class="card"><strong>Bloque base</strong><br>Texto <code class="token">{colors.ink}</code> sobre <code class="token">{colors.background}</code> + textura</div>
+    </div>
+  </section>
+
+  <section class="block" id="tipografia" aria-labelledby="h-tipo">
+    <div class="sec-head"><span class="n" aria-hidden="true">02</span><h2 id="h-tipo">Tipografía</h2>
+    <p>Display manuscrita solo en grandes títulos; Kumbh Sans para todo lo demás por peso y tamaño.</p></div>
+    <div class="font-note"><strong>Fuentes:</strong> Kumbh Sans desde Google Fonts. Display usa <code class="token">{typography.display.fontFamily}</code> con vista previa local <em>Playwrite US Trad</em> desde <code class="token">assets/fonts/</code>.</div>
+    <h3>Escala</h3>
+    <div class="spec"><p class="sample s-display">Diseño que cuenta historias</p><p class="note"><code class="token">{typography.display}</code> · Playwrite US Trad 400 · clamp(48–76px) / 1.3 · solo títulos de sección</p></div>
+    <div class="spec"><p class="sample s-heading">Título secundario Kumbh Sans Bold 28px</p><p class="note"><code class="token">{typography.heading}</code> · 700 / 1.2 · <code class="token">{colors.primary}</code></p></div>
+    <div class="spec"><p class="sample s-sub">Subtítulo / categoría Kumbh Sans SemiBold 20px</p><p class="note"><code class="token">{typography.subheading}</code> · 600 / 1.3</p></div>
+    <div class="spec"><p class="sample s-body">Párrafo de lectura en Kumbh Sans Regular 16px con interlineado 1.6. Investigo, organizo y resuelvo antes de diseñar.</p><p class="note"><code class="token">{typography.body}</code> · 400 / 1.6</p></div>
+    <div class="spec"><p class="sample s-strong">Énfasis en semibold dentro del párrafo.</p><p class="note"><code class="token">{typography.body-strong}</code> · 600</p></div>
+    <div class="spec"><p class="sample s-caption">Nombre del proyecto · Editorial · 2025 · Descripción breve</p><p class="note"><code class="token">{typography.caption}</code> · 500 14px / 1.5 · <code class="token">{colors.muted}</code></p></div>
+    <div class="spec"><p class="sample s-number">03</p><p class="note"><code class="token">{typography.number}</code> · 700 clamp(40–64px) · estructural, orienta el recorrido</p></div>
+  </section>
+
+  <section class="block" id="espaciado" aria-labelledby="h-esp">
+    <div class="sec-head"><span class="n" aria-hidden="true">03</span><h2 id="h-esp">Espaciado y retícula</h2>
+    <p>Escala en múltiplos de <code class="token">{spacing.base} = 8px</code>. Retícula de 12 columnas, ordenada pero dinámica.</p></div>
+    <h3>Escala (px)</h3>
+    <div class="scale" aria-hidden="true">
+      <div class="bar"><i style="height:4px"></i>xs 4</div>
+      <div class="bar"><i style="height:8px"></i>sm 8</div>
+      <div class="bar"><i style="height:16px"></i>md 16</div>
+      <div class="bar"><i style="height:24px"></i>lg 24</div>
+      <div class="bar"><i style="height:32px"></i>xl 32</div>
+      <div class="bar"><i style="height:48px"></i>2xl 48</div>
+      <div class="bar"><i style="height:64px"></i>3xl 64</div>
+      <div class="bar"><i style="height:96px"></i>4xl 96</div>
+    </div>
+    <p class="note">Texto <code class="token">{spacing.text-gap}=16px</code> · tarjetas <code class="token">{spacing.card-gap}=24px</code> · secciones <code class="token">{spacing.section-gap}=96px</code></p>
+    <h3>Retícula 12 columnas</h3>
+    <div class="grid-demo">
+      <div class="grid12" aria-hidden="true"><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div><div>11</div><div>12</div></div>
+      <div class="edit-demo">
+        <figure class="a">Proyecto grande · 7 col</figure>
+        <figure class="b">Proyecto chico · 5 col</figure>
+      </div>
+      <p class="note">Composición editorial: las imágenes cambian de tamaño dentro de la retícula. En móvil todo pasa a 1 columna.</p>
+    </div>
+  </section>
+
+  <section class="block" id="formas" aria-labelledby="h-form">
+    <div class="sec-head"><span class="n" aria-hidden="true">04</span><h2 id="h-form">Radios y formas</h2>
+    <p>Cercanas y amables: tarjetas ligeramente redondeadas, botones siempre cápsula.</p></div>
+    <div class="radii">
+      <div class="radius-card"><div class="box" style="border-radius:var(--r-sm)"></div><strong>sm · 8px</strong><br><code class="token">{rounded.sm}</code></div>
+      <div class="radius-card"><div class="box" style="border-radius:var(--r-md)"></div><strong>md · 12px</strong><br><code class="token">{rounded.md}</code> · tarjetas</div>
+      <div class="radius-card"><div class="box" style="border-radius:var(--r-lg)"></div><strong>lg · 16px</strong><br><code class="token">{rounded.lg}</code> · imágenes</div>
+      <div class="radius-card"><div class="box" style="border-radius:var(--r-pill);height:48px"></div><strong>pill · 999px</strong><br><code class="token">{rounded.pill}</code> · botones</div>
+      <div class="radius-card"><div class="box" style="border-radius:var(--r-circle);width:72px;height:72px;margin:0 auto 8px"></div><strong>circle · 50%</strong><br><code class="token">{rounded.circle}</code> · iconos</div>
+    </div>
+    <div class="lines">
+      <div><span class="u">Subrayado fino 1px</span> <code class="token">{components.link}</code> · títulos y enlaces, nunca grueso.</div>
+      <hr aria-hidden="true">
+      <p class="note" style="margin:0">Marco delicado <code class="token">{colors.border-subtle}</code> · números grandes <code class="token">{typography.number}</code> · collage solo decorativo en dosis pequeñas · textura de papel sobre el fondo (la ves en esta página).</p>
+    </div>
+  </section>
+
+  <section class="block" id="elevacion" aria-labelledby="h-elev">
+    <div class="sec-head"><span class="n" aria-hidden="true">05</span><h2 id="h-elev">Elevación y profundidad</h2>
+    <p>La jerarquía sale del color y la escala, no de sombras. Sombra mínima y solo para separar.</p></div>
+    <div class="elev">
+      <div class="e0"><strong>Sin elevación</strong><br><span class="note">Botones, nav, imágenes. El botón cambia por detalle gráfico, no por sombra.</span></div>
+      <div class="e1"><strong>Tarjeta</strong><br><span class="note"><code class="token">0 1px 2px + 0 4px 16px {colors.overlay}</code></span></div>
+    </div>
+  </section>
+
+  <section class="block" id="componentes" aria-labelledby="h-comp">
+    <div class="sec-head"><span class="n" aria-hidden="true">06</span><h2 id="h-comp">Componentes</h2>
+    <p>Todos heredan color, tipo, espaciado y radio de los tokens. Pasa el cursor o enfoca con teclado para ver la interacción sobria.</p></div>
+    <h3>Botones · <code class="token">{rounded.pill}</code></h3>
+    <div class="btn-row">
+      <a class="btn btn-primary" href="#componentes">Ver proyectos <span class="arr" aria-hidden="true">→</span></a>
+      <a class="btn btn-secondary" href="#componentes">Sobre mí</a>
+    </div>
+    <p class="note">Primario: fondo <code class="token">{colors.primary}</code> + texto <code class="token">{colors.ink-on-primary}</code> con flecha. Secundario: fondo beige + borde 1px.</p>
+    <h3>Tarjetas</h3>
+    <div class="comp-grid">
+      <article class="card"><h3>Habilidad</h3><p>Presentación visual en lugar de lista tradicional.</p><ul class="skill-tags"><li>Branding</li><li>Tipografía</li><li>Storytelling</li></ul><p class="note"><code class="token">{components.card-skill}</code></p></article>
+      <article class="card"><h3>Contacto</h3><div class="contact-row"><a class="contact-card" href="#componentes"><span class="dot" aria-hidden="true">@</span>Email</a><a class="contact-card" href="#componentes"><span class="dot" aria-hidden="true">in</span>LinkedIn</a></div><p class="note"><code class="token">{components.card-contact}</code> · icono + nombre</p></article>
+      <article class="card"><h3>Navegación</h3><div class="nav-sample"><a href="#top"><b>01</b>Sobre mí</a><a href="#top"><b>05</b>Proyectos</a></div><p class="note"><code class="token">{components.nav-item}</code> · número + etiqueta + línea</p></article>
+      <article class="card"><h3>Enlace</h3><p><a class="link-fine" href="#componentes">Ver caso de estudio</a></p><p class="note"><code class="token">{components.link}</code> · subrayado 1px</p></article>
+      <article class="card proj" style="padding:0"><div class="img">Foto proyecto · fondo neutro</div><div class="cap"><strong>Nombre del proyecto</strong>Editorial · 2025 · Descripción breve. <code class="token">{components.image-project}</code></div></article>
+      <article class="card"><h3>Herramientas</h3><div class="tool-row"><span class="tool"><i>Ai</i>Illustrator</span><span class="tool"><i>Ps</i>Photoshop</span><span class="tool"><i>Fg</i>Figma</span></div><p class="note">Logo + nombre en <code class="token">{typography.caption}</code>, sin tarjeta pesada.</p></article>
+    </div>
+  </section>
+
+  <section class="block" id="reglas" aria-labelledby="h-reglas" style="border-bottom:none">
+    <div class="sec-head"><span class="n" aria-hidden="true">✓✕</span><h2 id="h-reglas">Lo permitido y lo no permitido</h2></div>
+    <div class="dd">
+      <div class="do"><h3>Sí</h3><ul>
+        <li>Paleta azul + beige; blanco solo de apoyo.</li>
+        <li>Display solo en grandes títulos.</li>
+        <li>Líneas y marcos finos de 1px.</li>
+        <li>Textura y collage en dosis pequeñas.</li>
+        <li>Tarjetas <code class="token">12px</code>, botones cápsula.</li>
+        <li>Sombras mínimas solo para separar.</li>
+        <li>Fotos limpias, el proyecto manda.</li>
+      </ul></div>
+      <div class="dont"><h3>No</h3><ul>
+        <li>Más colores, degradados o neones.</li>
+        <li>Handsome Pro en párrafos o UI.</li>
+        <li>Bordes gruesos o pesados.</li>
+        <li>Saturar de textura o collage.</li>
+        <li>Botones rectangulares.</li>
+        <li>Sombras duras o en botones.</li>
+        <li>Filtros que compitan con la obra; no deformar el logo.</li>
+      </ul></div>
+    </div>
+  </section>
+</div>
+</main>
+
+<footer><div class="wrap">Sistema de Sofía Ramos Ferra · Tokens de <code class="token">DESIGN.md</code> · Contrastes verificados AA · <span id="year"></span></div></footer>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<script>
+(function(){
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var btn = document.getElementById('menuBtn'), nav = document.getElementById('mainNav');
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  var toast = document.getElementById('toast'), t;
+  function show(msg){
+    toast.textContent = msg; toast.classList.add('show');
+    clearTimeout(t); t = setTimeout(function(){ toast.classList.remove('show'); }, 1600);
+  }
+  document.querySelectorAll('.copy').forEach(function(b){
+    b.addEventListener('click', function(){
+      var v = b.getAttribute('data-copy');
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(v).then(function(){ show('Copiado ' + v); }, function(){ show(v); });
+      } else {
+        var i = document.createElement('input'); i.value = v; document.body.appendChild(i);
+        i.select(); try { document.execCommand('copy'); } catch(e){} document.body.removeChild(i); show('Copiado ' + v);
+      }
+    });
+  });
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.main a'));
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href')] = a; });
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          links.forEach(function(a){ a.removeAttribute('aria-current'); });
+          var a = map['#' + e.target.id]; if (a) a.setAttribute('aria-current', 'true');
+        }
+      });
+    }, {rootMargin: '-40% 0px -55% 0px'});
+    ['colores','tipografia','espaciado','formas','elevacion','componentes'].forEach(function(id){
+      var el = document.getElementById(id); if (el) obs.observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>
