@@ -662,6 +662,7 @@ footer .wrap{position:relative;z-index:1;display:flex;gap:var(--sp-sm);flex-wrap
 
   brand.addEventListener('click', function(event){
     event.preventDefault();
+    if (location.hash !== '#inicio') location.hash = '#inicio';
     playIntro();
   });
   video.addEventListener('ended', finishIntro);
