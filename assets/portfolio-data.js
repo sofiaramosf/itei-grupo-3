@@ -301,10 +301,10 @@ window.portfolioCategories = [
         "title": "Forros de libros",
         "description": "Diseño e ilustración de portadas para una colección de libros, desarrollado durante el tercer semestre. La propuesta explora la narrativa visual a través de ilustraciones originales que reflejan la atmósfera y la esencia de cada obra.",
         "images": [
-          "assets/img/editorial/forros/Trilogía de Poe_ edición extraordinaria.png",
+          "assets/img/editorial/forros/portada-dos.png",
           "assets/img/editorial/forros/Mockup de cuentos de Lovecraft.png"
         ],
-        "cover": "assets/img/editorial/forros/Trilogía de Poe_ edición extraordinaria.png"
+        "cover": "assets/img/editorial/forros/portada-dos.png"
       }
     ]
   },
