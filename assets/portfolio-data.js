@@ -83,6 +83,7 @@ window.portfolioCategories = [
   {
     "id": "ilustracion",
     "name": "Ilustración",
+    "cover": "assets/img/ilustracion/feria/Feria.png",
     "projects": [
       {
         "id": "bolsa-de-lona",
@@ -323,6 +324,7 @@ window.portfolioCategories = [
   {
     "id": "modelado-3d",
     "name": "Modelado 3D",
+    "cover": "assets/img/modelado3d/personaje/Personaje_1_0002.png",
     "projects": [
       {
         "id": "personaje-3d",
