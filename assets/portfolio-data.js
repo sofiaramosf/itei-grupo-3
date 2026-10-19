@@ -309,6 +309,60 @@ window.portfolioCategories = [
     ]
   },
   {
+    "id": "identidad",
+    "name": "Identidad",
+    "cover": "assets/img/identidad/emirates/Pantallas Emirates en vuelo.png",
+    "projects": [
+      {
+        "id": "equilibrio-tipografico",
+        "title": "Equilibrio Tipográfico",
+        "description": "Identidad visual para una exposición museográfica dedicada a los tipógrafos Fili y Erik Spiekermann, explorando la relación entre tipografía, composición y expresión visual. Proyecto desarrollado durante el quinto semestre de la carrera.",
+        "images": [
+          "assets/img/identidad/equilibrio_tipografico/Captura de pantalla 2026-10-12 a la(s) 9.24.59 p.m..png",
+          "assets/img/identidad/equilibrio_tipografico/Captura de pantalla 2026-10-12 a la(s) 9.25.16 p.m..png",
+          "assets/img/identidad/equilibrio_tipografico/Captura de pantalla 2026-10-12 a la(s) 9.25.19 p.m..png",
+          "assets/img/identidad/equilibrio_tipografico/Captura de pantalla 2026-10-12 a la(s) 9.25.24 p.m..png",
+          "assets/img/identidad/equilibrio_tipografico/Captura de pantalla 2026-10-12 a la(s) 9.25.28 p.m..png",
+          "assets/img/identidad/equilibrio_tipografico/Captura de pantalla 2026-10-12 a la(s) 9.25.43 p.m..png",
+          "assets/img/identidad/equilibrio_tipografico/Captura de pantalla 2026-10-12 a la(s) 9.25.54 p.m..png",
+          "assets/img/identidad/equilibrio_tipografico/Captura de pantalla 2026-10-12 a la(s) 9.26.04 p.m..png"
+        ],
+        "cover": "assets/img/identidad/equilibrio_tipografico/Captura de pantalla 2026-10-12 a la(s) 9.25.43 p.m..png"
+      },
+      {
+        "id": "lapi",
+        "title": "LAPI",
+        "description": "Rediseño de identidad visual para los Laboratorios LAPI, con el objetivo de construir una imagen de marca contemporánea, coherente y profesional. Proyecto desarrollado durante el quinto semestre de la carrera.",
+        "images": [
+          "assets/img/identidad/lapi/Captura de pantalla 2026-10-12 a la(s) 9.30.20 p.m..png",
+          "assets/img/identidad/lapi/Captura de pantalla 2026-10-12 a la(s) 9.31.35 p.m..png",
+          "assets/img/identidad/lapi/Captura de pantalla 2026-10-12 a la(s) 9.31.46 p.m..png",
+          "assets/img/identidad/lapi/Captura de pantalla 2026-10-12 a la(s) 9.31.51 p.m..png",
+          "assets/img/identidad/lapi/Captura de pantalla 2026-10-12 a la(s) 9.32.04 p.m..png",
+          "assets/img/identidad/lapi/Captura de pantalla 2026-10-12 a la(s) 9.32.13 p.m..png"
+        ],
+        "cover": "assets/img/identidad/lapi/Captura de pantalla 2026-10-12 a la(s) 9.32.04 p.m..png"
+      },
+      {
+        "id": "emirates-mexico-68",
+        "title": "Emirates — México 68",
+        "description": "Propuesta de identidad visual para la clase Premier de Emirates, fusionando la experiencia premium de la aerolínea con el lenguaje gráfico de México 68. El proyecto incluye el diseño de una aplicación y el desarrollo de una propuesta de experiencia UX/UI. Proyecto realizado durante el tercer semestre de la carrera.",
+        "images": [
+          "assets/img/identidad/emirates/Captura de pantalla 2026-10-15 a la(s) 11.14.39 p.m..png",
+          "assets/img/identidad/emirates/Captura de pantalla 2026-10-15 a la(s) 11.14.46 p.m..png",
+          "assets/img/identidad/emirates/Captura de pantalla 2026-10-15 a la(s) 11.14.52 p.m..png",
+          "assets/img/identidad/emirates/Captura de pantalla 2026-10-15 a la(s) 11.15.06 p.m..png",
+          "assets/img/identidad/emirates/Captura de pantalla 2026-10-15 a la(s) 11.15.25 p.m..png",
+          "assets/img/identidad/emirates/Captura de pantalla 2026-10-15 a la(s) 11.15.35 p.m..png",
+          "assets/img/identidad/emirates/Captura de pantalla 2026-10-15 a la(s) 11.16.17 p.m..png",
+          "assets/img/identidad/emirates/Collage de pantallas de Emirates en iPhone.png",
+          "assets/img/identidad/emirates/Pantallas Emirates en vuelo.png"
+        ],
+        "cover": "assets/img/identidad/emirates/Captura de pantalla 2026-10-15 a la(s) 11.15.06 p.m..png"
+      }
+    ]
+  },
+  {
     "id": "ux",
     "name": "UX",
     "projects": [

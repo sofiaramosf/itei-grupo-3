@@ -162,6 +162,10 @@ h3{font-size:var(--fs-sub);margin:var(--sp-xl) 0 var(--sp-md)}
 .proj-grid.is-animation .proj,.proj-grid.is-animation .proj:nth-child(n){grid-column:auto}
 .proj-grid.is-illustration{display:block;columns:2;column-gap:var(--sp-lg)}
 .proj-grid.is-illustration .proj{display:inline-block;width:100%;margin:0 0 var(--sp-lg);break-inside:avoid}
+.proj-grid.is-identity{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:start}
+.identity-project-column{display:flex;flex-direction:column;gap:var(--sp-lg);min-width:0}
+.proj-grid.is-identity .proj{width:100%;margin:0}
+.proj-grid.is-identity .proj img{height:auto;aspect-ratio:auto;object-fit:contain;background:transparent}
 .proj{background:var(--colors-surface);border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);overflow:hidden;margin:0;box-shadow:var(--shadow-card)}
 .proj-card{display:block;color:inherit;text-decoration:none;transition:transform .3s ease,border-color .3s ease}
 .proj-card img,.proj-card video{transition:transform .3s ease}
@@ -207,6 +211,7 @@ h3{font-size:var(--fs-sub);margin:var(--sp-xl) 0 var(--sp-md)}
 .project-image-grid.is-astronaut{display:block;columns:2;column-gap:var(--sp-lg)}
 .project-image-grid.is-zerena{display:block;columns:2;column-gap:var(--sp-lg)}
 .project-image-grid.is-feria{display:block;columns:2;column-gap:var(--sp-lg)}
+.project-image-grid.is-identity{display:block;columns:3;column-gap:var(--sp-lg)}
 .project-image-grid figcaption{padding:10px 14px;color:var(--colors-muted);font-size:var(--fs-caption)}
 [hidden]{display:none!important}
 .project-view nav.main,.project-view .menu-btn{display:none!important}
@@ -225,14 +230,14 @@ footer{position:relative;isolation:isolate;min-height:clamp(280px,34vw,480px);ov
 footer:before{content:"";position:absolute;inset:0;z-index:-1;background:url('assets/img/pie.jpg') center bottom / cover no-repeat;pointer-events:none}
 footer .wrap{position:relative;z-index:1;display:flex;gap:var(--sp-sm);flex-wrap:wrap}
 /* ---------- escritorio ---------- */
-@media(max-width:900px){.proj-grid .proj,.proj-grid .proj:nth-child(n){grid-column:span 6}.proj-grid.is-animation{grid-template-columns:repeat(2,minmax(0,1fr))}.proj-grid.is-animation .proj,.proj-grid.is-animation .proj:nth-child(n){grid-column:auto}.project-detail-head{grid-template-columns:1fr}}
+@media(max-width:900px){.proj-grid .proj,.proj-grid .proj:nth-child(n){grid-column:span 6}.proj-grid.is-animation{grid-template-columns:repeat(2,minmax(0,1fr))}.proj-grid.is-animation .proj,.proj-grid.is-animation .proj:nth-child(n){grid-column:auto}.project-image-grid.is-identity{columns:2}.project-detail-head{grid-template-columns:1fr}}
 @media(max-width:767px){
  #sobre-mi p{max-width:calc(100% - 90px)}
  .hero{min-height:0;align-items:flex-start;padding:90vw 0 36px}
  .hero:before{top:0;width:100%;height:86vw;background-size:auto 86vw;background-position:right top}
  .hero-grid{grid-template-columns:1fr;gap:0}.hero-copy{width:100%;max-width:none;padding:0}.kicker{font-size:clamp(24px,6.5vw,32px)}.hero .role{font-size:clamp(16px,4.4vw,19px);line-height:1.3;margin-bottom:16px}.hero h1{font-size:clamp(40px,10vw,58px);line-height:1.15;white-space:normal;margin-bottom:14px}.hero p.lead{font-size:15px;line-height:1.45;margin-bottom:22px}
  .btn-row{gap:12px}.btn{flex:1 1 0;min-width:0;padding:9px 10px;font-size:clamp(12px,3.4vw,14px);white-space:nowrap}
- .project-categories{gap:10px;padding-bottom:12px}.category-tile{flex-basis:min(90vw,420px);width:min(90vw,420px);height:clamp(440px,120vw,560px)}.category-gallery-controls{display:none}.proj-grid .proj,.proj-grid .proj:nth-child(n){grid-column:span 12}.proj-grid.is-campaigns,.proj-grid.is-illustration{columns:1}.proj-grid.is-animation{grid-template-columns:1fr}.proj-grid.is-animation .proj,.proj-grid.is-animation .proj:nth-child(n){grid-column:auto}.project-image-grid,.project-image-grid.is-astronaut,.project-image-grid.is-zerena,.project-image-grid.is-feria{columns:1}.project-image-grid.is-panes-video{display:block}.project-image-grid.is-panes-video figure{width:100%;margin:0 0 var(--sp-lg)}.route-head{margin-bottom:var(--sp-xl)}
+ .project-categories{gap:10px;padding-bottom:12px}.category-tile{flex-basis:min(90vw,420px);width:min(90vw,420px);height:clamp(440px,120vw,560px)}.category-gallery-controls{display:none}.proj-grid .proj,.proj-grid .proj:nth-child(n){grid-column:span 12}.proj-grid.is-campaigns,.proj-grid.is-illustration{columns:1}.proj-grid.is-identity{grid-template-columns:1fr}.proj-grid.is-animation{grid-template-columns:1fr}.proj-grid.is-animation .proj,.proj-grid.is-animation .proj:nth-child(n){grid-column:auto}.project-image-grid,.project-image-grid.is-astronaut,.project-image-grid.is-zerena,.project-image-grid.is-feria,.project-image-grid.is-identity{columns:1}.project-image-grid.is-panes-video{display:block}.project-image-grid.is-panes-video figure{width:100%;margin:0 0 var(--sp-lg)}.route-head{margin-bottom:var(--sp-xl)}
 }
 @media(prefers-reduced-motion:reduce){.project-categories{scroll-behavior:auto}.category-tile,.category-tile img{transition:none}}
 @media(prefers-reduced-motion:reduce){.category-tile,.category-tile img,.category-tile video,.proj-card,.proj-card img,.proj-card video,.proj-caption strong{transition:none!important}}
@@ -412,7 +417,7 @@ footer .wrap{position:relative;z-index:1;display:flex;gap:var(--sp-sm);flex-wrap
 <script>
 (function(){
   var categories = window.portfolioCategories || [];
-  var homeOrder = ['ilustracion','empaque','animacion','modelado-3d','campanas','editorial'];
+  var homeOrder = ['campanas','ilustracion','identidad','empaque','animacion','editorial','modelado-3d'];
   var homeScreen = document.getElementById('homeScreen');
   var categoryScreen = document.getElementById('categoryScreen');
   var projectScreen = document.getElementById('projectScreen');
@@ -456,13 +461,19 @@ footer .wrap{position:relative;z-index:1;display:flex;gap:var(--sp-sm);flex-wrap
     categoryProjects.classList.toggle('is-campaigns', category.id === 'campanas');
     categoryProjects.classList.toggle('is-animation', category.id === 'animacion');
     categoryProjects.classList.toggle('is-illustration', category.id === 'ilustracion');
+    categoryProjects.classList.toggle('is-identity', category.id === 'identidad');
     categoryTitle.textContent = category.name;
     categorySummary.textContent = category.projects.length ? category.projects.length + (category.projects.length === 1 ? ' proyecto' : ' proyectos') : 'En preparación';
-    categoryProjects.innerHTML = category.projects.length ? category.projects.map(function(project){
+    var projectCards = category.projects.length ? category.projects.map(function(project){
       var cover = project.cover || project.images[0] || '';
       var preview = cover ? '<img src="' + cover + '" alt="Vista previa de ' + project.title + '" loading="lazy">' : project.videos && project.videos.length ? '<video class="proj-preview-video" muted autoplay loop playsinline preload="metadata" aria-hidden="true"><source src="' + project.videos[0] + '" type="' + videoMimeType(project.videos[0]) + '"></video>' : '<div class="proj-placeholder" aria-hidden="true">Imágenes próximamente</div>';
       return '<a class="proj proj-card' + (project.id === 'califia-farms' ? ' proj-card--califia' : '') + (project.id === 'zerena' ? ' proj-card--zerena' : '') + (project.id === 'cartel-filiaz' ? ' proj-card--filiaz' : '') + (project.id === 'feria' ? ' proj-card--feria' : '') + '" href="#proyecto/' + category.id + '/' + project.id + '" aria-label="Abrir proyecto ' + project.title + '">' + preview + '<span class="proj-caption"><strong>' + project.title + '</strong></span></a>';
-    }).join('') : '<p class="empty-category">Próximamente agregaré aquí mis proyectos de animación.</p>';
+    }) : [];
+    if (category.id === 'identidad' && projectCards.length === 3) {
+      categoryProjects.innerHTML = '<div class="identity-project-column">' + projectCards[0] + projectCards[2] + '</div><div class="identity-project-column">' + projectCards[1] + '</div>';
+    } else {
+      categoryProjects.innerHTML = projectCards.length ? projectCards.join('') : '<p class="empty-category">Próximamente agregaré aquí mis proyectos de animación.</p>';
+    }
     window.dispatchEvent(new Event('portfolio:category-rendered'));
     document.title = category.name + ' · Portafolio de Sofía Ramos';
   }
@@ -499,6 +510,7 @@ footer .wrap{position:relative;z-index:1;display:flex;gap:var(--sp-sm);flex-wrap
     projectImages.classList.toggle('is-zerena', project.id === 'zerena');
     projectImages.classList.toggle('is-panes-video', project.id === 'bolsa-de-lona');
     projectImages.classList.toggle('is-feria', project.id === 'feria');
+    projectImages.classList.toggle('is-identity', category.id === 'identidad');
     projectBack.href = '#categoria/' + category.id;
     var projectMedia = project.images.map(function(src, index){
       return '<figure><img src="' + src + '" alt="' + project.title + ' · imagen ' + (index + 1) + '" loading="' + (index < 2 ? 'eager' : 'lazy') + '"></figure>';
