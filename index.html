@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portafolio de Sofía Ramos Ferra, diseñadora gráfica digital: sobre mí, educación, proyectos, habilidades, herramientas y contacto.">
+<title>Sofía Ramos Ferra · Diseñadora gráfica digital</title>
+<!--
+  FUENTES DE VERDAD
+  Contenido y orden: CV.md (desde Arquitectura-CV.docx)
+  Diseño: DESIGN.md + assets/ (tokens abajo, referencia visual: design.html)
+-->
+<style>
+@font-face {
+  font-family: 'Playwrite US Trad';
+  src: url('assets/fonts/Playwrite_US_Trad/PlaywriteUSTrad-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 400; font-display: swap;
+}
+@font-face {
+  font-family: 'Manrope';
+  src: url('assets/fonts/Manrope/Manrope-VariableFont_wght.ttf') format('truetype');
+  font-weight: 200 800; font-display: swap;
+}
+</style>
+<style>
+:root{
+  /* === TOKENS derivados de DESIGN.md === */
+  --colors-primary:#113051;            /* {colors.primary} */
+  --colors-background:#F9F7EF;         /* {colors.background} */
+  --colors-surface:#FFFFFF;            /* {colors.surface} */
+  --colors-ink:#113051;                /* {colors.ink} */
+  --colors-ink-on-primary:#F9F7EF;     /* {colors.ink-on-primary} */
+  --colors-muted:rgba(17,48,81,.72);   /* {colors.muted} */
+  --colors-line:#113051;               /* {colors.line} */
+  --colors-border-subtle:rgba(17,48,81,.18); /* {colors.border-subtle} */
+  --colors-overlay:rgba(17,48,81,.06); /* {colors.overlay} */
+  --font-display:'Handsome Pro','Playwrite US Trad',cursive; /* {typography.display.fontFamily} */
+  --font-sans:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif; /* local portfolio font */
+  --fs-display:clamp(48px,6vw,76px);   /* {typography.display.fontSize} */
+  --fs-heading:28px;                   /* {typography.heading.fontSize} */
+  --fs-sub:20px;                       /* {typography.subheading.fontSize} */
+  --fs-body:16px;                      /* {typography.body.fontSize} */
+  --fs-caption:14px;                   /* {typography.caption.fontSize} */
+  --sp-xs:4px; --sp-sm:8px; --sp-md:16px; --sp-lg:24px; /* {spacing.scale} */
+  --sp-xl:32px; --sp-2xl:48px; --sp-3xl:64px; --sp-4xl:96px;
+  --r-sm:8px; --r-md:12px; --r-lg:16px; --r-pill:999px; --r-circle:50%; /* {rounded} */
+  --shadow-card:0 1px 2px rgba(17,48,81,.06),0 4px 16px rgba(17,48,81,.06);
+  --max:1200px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{overflow-x:clip}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{
+  margin:0;font-family:var(--font-sans);font-size:var(--fs-body);line-height:1.6;
+  color:var(--colors-ink);background:var(--colors-background);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0.07 0 0 0 0 0.19 0 0 0 0 0.32 0 0 0 .05 0'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+::selection{background:var(--colors-primary);color:var(--colors-ink-on-primary)}
+a{color:var(--colors-primary)}
+:focus-visible{outline:3px solid var(--colors-primary);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--colors-primary);color:var(--colors-ink-on-primary);padding:8px 16px;z-index:99;border-radius:0 0 var(--r-sm) 0}
+.skip:focus{left:0}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--sp-lg)}
+img{max-width:100%;height:auto}
+#contenido,footer{position:relative;z-index:1}
+/* ---------- header ---------- */
+.site-header{width:100vw;max-width:none;left:0;border-bottom:1px solid var(--colors-primary);position:relative;background:var(--colors-primary);color:var(--colors-ink-on-primary);z-index:10}
+.site-header .wrap{display:flex;align-items:center;gap:var(--sp-lg);padding-top:var(--sp-sm);padding-bottom:var(--sp-sm)}
+.site-header a{color:var(--colors-ink-on-primary)}
+.site-header :focus-visible{outline-color:var(--colors-ink-on-primary)}
+.brand{display:inline-flex;align-items:flex-start;text-decoration:none}
+.brand img{height:44px;width:auto;max-width:100%;object-fit:contain;flex-shrink:0;display:block;aspect-ratio:auto;transition:transform .2s ease}
+.brand:hover img,.brand:focus-visible img{transform:scale(1.06) rotate(-2deg)}
+nav.main{margin-left:auto}
+nav.main ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
+nav.main a{display:inline-block;text-decoration:none;font-size:14px;font-weight:600;padding:8px 10px;border-radius:var(--r-sm)}
+nav.main a:hover,nav.main a[aria-current="true"]{text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.menu-btn{display:none;margin-left:auto;background:none;border:1px solid var(--colors-ink-on-primary);border-radius:var(--r-pill);color:var(--colors-ink-on-primary);font:inherit;font-weight:600;padding:8px 16px;cursor:pointer}
+/* ---------- hero ---------- */
+.hero{position:relative;isolation:isolate;width:100vw;margin-left:calc((min(var(--max),100vw) - 100vw)/2);min-height:calc(100svh - 62px);display:flex;align-items:center;padding:48px 0;background:transparent;overflow:visible}
+.hero:before{content:"";position:absolute;z-index:0;top:-80px;right:0;width:100%;height:calc(100vw * 1.1);background:url('assets/img/header.jpg?v=20261018-1') right top / 100% auto no-repeat;pointer-events:none}
+.hero-grid{position:relative;z-index:1;width:100%;max-width:none;padding-left:clamp(24px,5vw,72px);padding-right:clamp(24px,5vw,72px);display:grid;gap:48px;grid-template-columns:1.15fr .85fr;align-items:center}
+.hero-copy{max-width:700px;padding:0}
+.kicker{font-size:clamp(22px,2.8vw,38px);font-weight:800;letter-spacing:-.04em;line-height:1.1;margin:0 0 2px}
+.hero .role{font-size:clamp(17px,2vw,27px);font-weight:400;text-transform:uppercase;line-height:1.3;margin:0 0 24px}
+.hero h1{font-family:var(--font-display);font-weight:350;font-size:clamp(42px,4vw,68px);line-height:1.25;margin:0 0 24px;padding:.1em 0;overflow:visible;white-space:normal}
+.hero .hi{display:none}
+.hero p.lead{max-width:64ch;margin:0 0 36px;line-height:1.35}
+.hero p.lead strong{font-weight:800}
+.btn-row{display:flex;gap:var(--sp-md);flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:16px;padding:9px 30px;font-weight:700;font-size:16px;text-decoration:none;cursor:pointer;border:1px solid var(--colors-primary);min-width:158px}
+.btn-primary{background:transparent;color:var(--colors-primary)}
+.btn-primary:hover .arr{transform:translateX(3px)}
+.btn-secondary{background:var(--colors-background);color:var(--colors-primary)}
+.btn-secondary:hover{background:var(--colors-overlay)}
+.btn .arr{display:inline-block;transition:transform .15s}
+/* ---------- secciones ---------- */
+section.block{padding:var(--sp-3xl) 0;border-bottom:1px solid var(--colors-border-subtle)}
+#sobre-mi,#educacion{position:relative;z-index:1}
+#sobre-mi p{max-width:70ch}
+.sec-head h2{font-family:'Playwrite US Trad',cursive;font-size:clamp(28px,3.2vw,38px);font-weight:350;line-height:1.4;margin:0 0 var(--sp-md)}
+.sec-head p{margin:0 0 var(--sp-lg);color:var(--colors-muted);font-size:var(--fs-caption);max-width:80ch}
+h3{font-size:var(--fs-sub);margin:var(--sp-xl) 0 var(--sp-md)}
+.card{background:var(--colors-background);border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);box-shadow:var(--shadow-card);padding:var(--sp-lg)}
+/* ---------- proyectos ---------- */
+.project-categories{display:flex;flex-wrap:nowrap;align-items:stretch;gap:var(--sp-md);width:100%;min-width:0;margin:var(--sp-xl) 0 var(--sp-2xl);padding:4px 4px 14px;overflow-x:auto;overflow-y:hidden;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--colors-primary) var(--colors-border-subtle)}
+.project-categories::-webkit-scrollbar{height:8px}
+.project-categories::-webkit-scrollbar-track{background:var(--colors-border-subtle);border-radius:999px}
+.project-categories::-webkit-scrollbar-thumb{background:var(--colors-primary);border-radius:999px}
+.category-gallery-controls{display:flex;justify-content:flex-end;gap:8px;margin:-8px 0 8px}
+.category-gallery-controls button{width:38px;height:38px;border:1px solid var(--colors-border-subtle);border-radius:var(--r-circle);background:var(--colors-background);color:var(--colors-primary);font:inherit;font-size:20px;line-height:1;cursor:pointer;transition:background .18s,color .18s,border-color .18s}
+.category-gallery-controls button:hover{background:var(--colors-primary);border-color:var(--colors-primary);color:var(--colors-ink-on-primary)}
+.category-tile{position:relative;display:flex;flex:0 0 clamp(320px,36vw,440px);flex-direction:column;justify-content:flex-start;width:clamp(320px,36vw,440px);height:clamp(400px,42vw,520px);min-width:0;min-height:0;padding:0;overflow:visible;scroll-snap-align:start;text-align:left;text-decoration:none;background:transparent;border:0;border-radius:0;color:var(--colors-primary);font:inherit;cursor:pointer;transition:transform .18s}
+.category-tile:hover{transform:translateY(-3px)}
+.category-tile:focus-visible,.proj-card:focus-visible{outline:3px solid var(--colors-primary);outline-offset:3px}
+.category-tile:after{content:"";position:absolute;inset:0;background:transparent;pointer-events:none}
+.category-tile img,.category-tile video{position:relative;inset:auto;display:block;flex:1 1 auto;width:100%;height:calc(100% - 54px);min-height:0;object-fit:cover;background:var(--colors-overlay);border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);transition:transform .25s}
+.category-tile[data-category="campanas"] img{width:100%;height:calc(100% - 54px);max-width:none;object-fit:cover;object-position:center}
+.category-tile.is-empty:before{content:"✳";position:absolute;inset:52px 0 0;display:grid;place-items:center;border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);background:linear-gradient(135deg,#17385b,#315b7d);font-size:clamp(42px,7vw,88px);font-weight:300;color:rgba(255,255,255,.28)}
+.category-tile:hover img,.category-tile:hover video{transform:scale(1.035)}
+.category-info{position:relative;z-index:1;flex:0 0 auto;width:100%;padding:0 0 10px;background:transparent}
+.category-tile span{position:relative;z-index:1;display:block;padding:0;color:var(--colors-primary);font-size:clamp(16px,2vw,24px);font-weight:700;text-shadow:none}
+.category-tile small{display:none}
+.proj-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-flow:dense;gap:var(--sp-lg)}
+.empty-category{grid-column:1/-1;margin:0;padding:var(--sp-lg);color:var(--colors-muted);background:var(--colors-surface);border:1px dashed var(--colors-border-subtle);border-radius:var(--r-md)}
+.proj-grid .proj{grid-column:span 6}
+.proj-grid .proj:nth-child(6n+1){grid-column:span 7}
+.proj-grid .proj:nth-child(6n+2){grid-column:span 5}
+.proj-grid .proj:nth-child(6n+3){grid-column:span 5}
+.proj-grid .proj:nth-child(6n+4){grid-column:span 7}
+.proj-grid .proj-card{align-self:start}
+.proj-grid.is-campaigns{display:block;columns:2;column-gap:var(--sp-lg)}
+.proj-grid.is-campaigns .proj{display:inline-block;width:100%;margin:0 0 var(--sp-lg);break-inside:avoid}
+.proj-grid.is-animation{grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-flow:row}
+.proj-grid.is-animation .proj,.proj-grid.is-animation .proj:nth-child(n){grid-column:auto}
+.proj-grid.is-illustration{display:block;columns:2;column-gap:var(--sp-lg)}
+.proj-grid.is-illustration .proj{display:inline-block;width:100%;margin:0 0 var(--sp-lg);break-inside:avoid}
+.proj{background:var(--colors-surface);border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);overflow:hidden;margin:0;box-shadow:var(--shadow-card)}
+.proj-card{display:block;color:inherit;text-decoration:none;transition:transform .18s,border-color .18s}
+.proj-card:hover{transform:translateY(-3px);border-color:var(--colors-primary)}
+.proj img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--colors-surface)}
+.proj-preview-video{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#111;pointer-events:none}
+.proj-card--califia img{aspect-ratio:4/5;object-fit:contain;background:#f3eee8}
+.proj-card--zerena img{aspect-ratio:4/5;object-fit:contain;background:#f3eee8}
+.proj-card--feria img{height:auto;aspect-ratio:auto;object-fit:contain;background:transparent}
+.proj-card--filiaz img{object-position:center 60%}
+.proj-placeholder{display:grid;place-items:center;aspect-ratio:4/3;padding:var(--sp-lg);background:linear-gradient(135deg,#17385b,#315b7d);color:var(--colors-ink-on-primary);text-align:center;font-weight:600}
+.proj-caption{display:block;padding:var(--sp-md);font-size:var(--fs-caption);color:var(--colors-muted)}
+.proj-caption strong{display:block;color:var(--colors-primary);font-size:16px;margin-bottom:4px}
+.route-screen{min-height:75vh}
+.route-head{display:flex;flex-direction:column;align-items:flex-start;gap:var(--sp-lg);margin-bottom:var(--sp-2xl)}
+.back-link{display:inline-flex;align-items:center;gap:8px;color:var(--colors-primary);font-weight:700;text-decoration:none;border-bottom:1px solid var(--colors-primary);padding:4px 0}
+.back-link:hover{text-decoration:underline;text-underline-offset:4px}
+.route-head h1{font-size:clamp(34px,5vw,56px);line-height:1.1;margin:0}
+.route-head p{margin:8px 0 0;color:var(--colors-muted);max-width:70ch}
+.project-detail-head{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr);gap:var(--sp-2xl);align-items:end}
+.project-detail-head.is-astronaut{grid-template-columns:minmax(0,.9fr) minmax(360px,1.1fr)}
+.project-detail-head.is-califia{grid-template-columns:minmax(0,.8fr) minmax(400px,1.2fr)}
+.project-detail-description{font-size:17px;line-height:1.65;color:var(--colors-ink)}
+.project-detail-description.is-placeholder{color:var(--colors-muted);font-size:var(--fs-body)}
+.project-image-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-flow:dense;gap:var(--sp-lg);margin-top:var(--sp-2xl)}
+.project-image-grid figure{grid-column:span 6;align-self:start;aspect-ratio:4/3;margin:0;background:var(--colors-surface);border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);overflow:hidden}
+.project-image-grid figure:nth-child(4n+1){grid-column:span 7}
+.project-image-grid figure:nth-child(4n+2){grid-column:span 5}
+.project-image-grid figure.is-portrait{max-height:82vh}
+.project-image-grid img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;background:#f1efe9}
+.project-image-grid figure.is-video{aspect-ratio:auto}
+.project-image-grid figure.is-video video{display:block;width:100%;height:auto;background:#111}
+.project-image-grid.is-panes-video figure:not(.is-video){grid-column:span 4}
+.project-image-grid.is-panes-video figure.is-video{grid-column:span 8}
+.project-image-grid.is-no-crop figure{aspect-ratio:auto}
+.project-image-grid.is-no-crop img{height:auto;max-height:82vh;object-fit:contain}
+.project-image-grid.is-astronaut{display:block;columns:2;column-gap:var(--sp-lg)}
+.project-image-grid.is-astronaut figure:nth-child(n){display:inline-block;width:100%;margin:0 0 var(--sp-lg);aspect-ratio:auto;break-inside:avoid}
+.project-image-grid.is-astronaut img{width:100%;height:auto;max-height:none;object-fit:contain}
+.project-image-grid.is-zerena{display:block;columns:2;column-gap:var(--sp-lg)}
+.project-image-grid.is-zerena figure:nth-child(n){display:inline-block;width:100%;margin:0 0 var(--sp-lg);aspect-ratio:auto;break-inside:avoid}
+.project-image-grid.is-zerena img{height:auto;max-height:none;object-fit:contain}
+.project-image-grid.is-feria{display:block;columns:2;column-gap:var(--sp-lg)}
+.project-image-grid.is-feria figure:nth-child(n){display:inline-block;width:100%;margin:0 0 var(--sp-lg);aspect-ratio:auto;break-inside:avoid}
+.project-image-grid.is-feria figure.is-portrait{max-height:none}
+.project-image-grid.is-feria img{height:auto;max-height:none;object-fit:contain}
+.project-image-grid figcaption{padding:10px 14px;color:var(--colors-muted);font-size:var(--fs-caption)}
+[hidden]{display:none!important}
+.project-view nav.main,.project-view .menu-btn{display:none!important}
+/* ---------- habilidades / herramientas ---------- */
+.skill-tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none;margin:0;padding:0}
+.skill-tags li{border:1px solid var(--colors-border-subtle);background:var(--colors-background);border-radius:var(--r-md);padding:10px 16px;font-size:15px;box-shadow:var(--shadow-card)}
+.tool-row{display:flex;gap:var(--sp-md);flex-wrap:wrap;list-style:none;margin:0;padding:0}
+.tool{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:500}
+.tool i{width:32px;height:32px;border-radius:var(--r-sm);background:var(--colors-primary);color:var(--colors-ink-on-primary);display:inline-flex;align-items:center;justify-content:center;font-style:normal;font-weight:700;font-size:13px;flex-shrink:0}
+/* ---------- contacto ---------- */
+.contact-row{display:flex;gap:var(--sp-md);flex-wrap:wrap;list-style:none;margin:0;padding:0}
+.contact-card{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);padding:12px 18px;background:var(--colors-background);box-shadow:var(--shadow-card);font-weight:600;font-size:15px}
+.contact-card .dot{width:28px;height:28px;border-radius:var(--r-circle);background:var(--colors-primary);color:var(--colors-ink-on-primary);display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
+.contact-card small{font-weight:500;color:var(--colors-muted)}
+footer{padding:var(--sp-2xl) 0 var(--sp-3xl);font-size:var(--fs-caption);color:var(--colors-muted)}
+footer .wrap{display:flex;gap:var(--sp-sm);flex-wrap:wrap}
+/* ---------- escritorio ---------- */
+@media(max-width:900px){.proj-grid .proj,.proj-grid .proj:nth-child(n){grid-column:span 6}.proj-grid.is-animation{grid-template-columns:repeat(2,minmax(0,1fr))}.proj-grid.is-animation .proj,.proj-grid.is-animation .proj:nth-child(n){grid-column:auto}.project-image-grid figure,.project-image-grid figure:nth-child(n){grid-column:span 6}.project-detail-head{grid-template-columns:1fr}}
+@media(max-width:767px){
+ #sobre-mi p{max-width:calc(100% - 90px)}
+ .hero{min-height:calc(100svh - 62px);padding:40px 0 36px}
+ .hero-grid{grid-template-columns:1fr;gap:32px}.hero-copy{padding:0}.hero h1{font-size:clamp(40px,11vw,68px);white-space:normal;margin-bottom:14px}.hero .role{margin-bottom:16px}.hero p.lead{margin-bottom:22px}
+ .project-categories{gap:10px;padding-bottom:12px}.category-tile{flex-basis:min(86vw,380px);width:min(86vw,380px);height:clamp(380px,115vw,480px)}.category-gallery-controls{display:none}.proj-grid .proj,.proj-grid .proj:nth-child(n){grid-column:span 12}.proj-grid.is-campaigns,.proj-grid.is-illustration{columns:1}.proj-grid.is-animation{grid-template-columns:1fr}.proj-grid.is-animation .proj,.proj-grid.is-animation .proj:nth-child(n){grid-column:auto}.project-image-grid figure,.project-image-grid figure:nth-child(n){grid-column:span 12;aspect-ratio:4/3}.project-image-grid.is-panes-video figure:not(.is-video),.project-image-grid.is-panes-video figure.is-video{grid-column:1/-1}.project-image-grid.is-astronaut,.project-image-grid.is-zerena,.project-image-grid.is-feria{columns:1}.project-image-grid.is-astronaut figure:nth-child(n),.project-image-grid.is-zerena figure:nth-child(n),.project-image-grid.is-feria figure:nth-child(n){width:100%}.route-head{margin-bottom:var(--sp-xl)}
+}
+@media(prefers-reduced-motion:reduce){.project-categories{scroll-behavior:auto}.category-tile,.category-tile img{transition:none}}
+@media(max-width:900px){
+  nav.main{display:none}
+  nav.main.open{display:block;position:absolute;top:100%;left:0;right:0;background:var(--colors-primary);border-bottom:1px solid var(--colors-primary)}
+  nav.main.open ul{flex-direction:column;padding:var(--sp-md)}
+  .menu-btn{display:inline-block}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><img src="assets/logo-sofia-beige.png" alt="Sofía Ramos — inicio" width="357" height="240"></a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">Menú</button>
+    <nav class="main" id="mainNav" aria-label="Secciones del portafolio">
+      <ul>
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#educacion">Educación</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#herramientas">Herramientas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+<div class="wrap" id="homeScreen">
+
+  <!-- 1 · Inicio (CV.md §1) -->
+  <div class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">PORTAFOLIO</p>
+        <p class="role">Diseñadora gráfica digital</p>
+        <h1>Hola, soy Sofía</h1>
+        <p class="lead"><strong>Diseño con creatividad y propósito.</strong> Disfruto cada etapa del proceso, desde los primeros bocetos hasta el resultado final. Te invito a conocer mi trabajo.</p>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="#proyectos">MIS PROYECTOS</a>
+          <a class="btn btn-secondary" href="#contacto">CONTACTO</a>
+        </div>
+      </div>
+      <div aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- 2 · Sobre mí (CV.md §2) -->
+  <section class="block" id="sobre-mi" aria-labelledby="h-sobre-mi">
+    <div class="sec-head">
+      <h2 id="h-sobre-mi">Sobre mí</h2>
+    </div>
+    <p>Me emociona involucrarme en todo el proceso creativo, desde la investigación y la exploración de ideas hasta los primeros bocetos y el desarrollo del producto final. Disfruto ver cómo una idea evoluciona y se transforma en una solución visual concreta.</p>
+    <p>Una de las cosas que más satisfacción me genera es superar mis propias expectativas y descubrir hasta dónde puedo llevar una propuesta de diseño. Trabajo con curiosidad y compromiso, cuidando cada etapa del proceso creativo.</p>
+  </section>
+
+  <!-- 3 · Educación (CV.md §3) -->
+  <section class="block" id="educacion" aria-labelledby="h-educacion">
+    <div class="sec-head">
+      <h2 id="h-educacion">Educación</h2>
+    </div>
+    <article class="card">
+      <h3 style="margin-top:0">Diseño Gráfico Digital · 7.º semestre</h3>
+      <p>Universidad La Salle · Facultad Mexicana de Arquitectura, Diseño y Comunicación (FAMADYC).</p>
+    </article>
+  </section>
+
+  <!-- 4 · Proyectos (CV.md §4) -->
+  <section class="block" id="proyectos" aria-labelledby="h-proyectos">
+    <div class="sec-head">
+      <h2 id="h-proyectos">Proyectos</h2>
+      <p>Explora las secciones de mi portafolio.</p>
+    </div>
+    <div class="category-gallery-controls" aria-label="Controles de categorías">
+      <button type="button" id="categoryPrev" aria-label="Desplazar categorías a la izquierda">‹</button>
+      <button type="button" id="categoryNext" aria-label="Desplazar categorías a la derecha">›</button>
+    </div>
+    <div class="project-categories" id="projectCategories" aria-label="Categorías de proyectos"></div>
+  </section>
+
+  <!-- 5 · Habilidades (CV.md §5) -->
+  <section class="block" id="habilidades" aria-labelledby="h-habilidades">
+    <div class="sec-head">
+      <h2 id="h-habilidades">Habilidades</h2>
+      <p>Fortalezas creativas y personales, en formato visual y de lectura fácil.</p>
+    </div>
+    <ul class="skill-tags">
+      <li>Ilustración</li>
+      <li>Investigación</li>
+      <li>Atención al detalle</li>
+      <li>Creatividad</li>
+      <li>Organización</li>
+      <li>Trabajo en equipo</li>
+    </ul>
+  </section>
+
+  <!-- 6 · Herramientas (CV.md §6) -->
+  <section class="block" id="herramientas" aria-labelledby="h-herramientas">
+    <div class="sec-head">
+      <h2 id="h-herramientas">Herramientas</h2>
+      <p>Programas y recursos del proceso de diseño.</p>
+    </div>
+    <ul class="tool-row">
+      <li class="tool"><i aria-hidden="true">Ai</i>Illustrator</li>
+      <li class="tool"><i aria-hidden="true">Ps</i>Photoshop</li>
+      <li class="tool"><i aria-hidden="true">Id</i>InDesign</li>
+      <li class="tool"><i aria-hidden="true">Ae</i>After Effects</li>
+      <li class="tool"><i aria-hidden="true">Fg</i>Figma</li>
+      <li class="tool"><i aria-hidden="true">Pr</i>Procreate</li>
+      <li class="tool"><i aria-hidden="true">My</i>Maya</li>
+      <li class="tool"><i aria-hidden="true">&lt;/&gt;</i>HTML/CSS</li>
+    </ul>
+  </section>
+
+  <!-- 7 · Contacto (CV.md §7) -->
+  <section class="block" id="contacto" aria-labelledby="h-contacto" style="border-bottom:none">
+    <div class="sec-head">
+      <h2 id="h-contacto">Contacto</h2>
+      <p>Encuéntrame fácilmente en estas plataformas.</p>
+    </div>
+    <ul class="contact-row">
+      <li><a class="contact-card" href="mailto:sofiaramosfe@gmail.com"><span class="dot" aria-hidden="true">@</span>Correo electrónico<br><small>sofiaramosfe@gmail.com</small></a></li>
+      <li><a class="contact-card" href="https://www.instagram.com/sofia.rammos" target="_blank" rel="noopener"><span class="dot" aria-hidden="true">ig</span>Instagram<br><small>@sofia.rammos</small></a></li>
+      <li><a class="contact-card" href="https://www.behance.net/sofaramos4" target="_blank" rel="noopener"><span class="dot" aria-hidden="true">Bē</span>Behance<br><small>behance.net/sofaramos4</small></a></li>
+    </ul>
+  </section>
+
+</div>
+
+<section class="wrap block route-screen" id="categoryScreen" aria-labelledby="categoryTitle" hidden>
+  <div class="route-head">
+    <a class="back-link" href="#proyectos">← Todas las secciones</a>
+    <div>
+      <h1 id="categoryTitle"></h1>
+      <p id="categorySummary"></p>
+    </div>
+  </div>
+  <div class="proj-grid" id="categoryProjects"></div>
+</section>
+
+<section class="wrap block route-screen" id="projectScreen" aria-labelledby="projectTitle" hidden>
+  <div class="route-head project-detail-head">
+    <div>
+      <a class="back-link" id="projectBack" href="#inicio">← Regresar a la categoría</a>
+      <div style="margin-top:var(--sp-lg)">
+        <p class="kicker" id="projectCategoryName" style="font-size:14px"></p>
+        <h1 id="projectTitle"></h1>
+      </div>
+    </div>
+    <p class="project-detail-description" id="projectDescription"></p>
+  </div>
+  <div class="project-image-grid" id="projectImages"></div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year"></span> Sofía Ramos Ferra. Derechos reservados.</span>
+  </div>
+</footer>
+
+<script src="assets/portfolio-data.js"></script>
+<script>
+(function(){
+  var categories = window.portfolioCategories || [];
+  var homeOrder = ['ilustracion','empaque','animacion','modelado-3d','campanas','editorial'];
+  var homeScreen = document.getElementById('homeScreen');
+  var categoryScreen = document.getElementById('categoryScreen');
+  var projectScreen = document.getElementById('projectScreen');
+  var categoryGrid = document.getElementById('projectCategories');
+  var categoryTitle = document.getElementById('categoryTitle');
+  var categorySummary = document.getElementById('categorySummary');
+  var categoryProjects = document.getElementById('categoryProjects');
+  var projectTitle = document.getElementById('projectTitle');
+  var projectCategoryName = document.getElementById('projectCategoryName');
+  var projectDescription = document.getElementById('projectDescription');
+  var projectImages = document.getElementById('projectImages');
+  var projectDetailHead = document.querySelector('.project-detail-head');
+  var projectBack = document.getElementById('projectBack');
+  var pageTitle = document.title;
+
+  function findCategory(id){return categories.find(function(category){return category.id === id;});}
+  function findProject(category, id){return category && category.projects.find(function(project){return project.id === id;});}
+  function videoMimeType(src){return /\.mov(?:$|\?)/i.test(src) ? 'video/quicktime' : 'video/mp4';}
+  function showScreen(screen){
+    homeScreen.hidden = screen !== 'home';
+    categoryScreen.hidden = screen !== 'category';
+    projectScreen.hidden = screen !== 'project';
+    document.body.classList.toggle('project-view', screen !== 'home');
+  }
+  function scrollToScreenStart(){window.scrollTo({top:0,left:0,behavior:'instant'});}
+  function renderHome(){
+    showScreen('home');
+    if (location.hash === '#proyectos') document.getElementById('proyectos').scrollIntoView({behavior:'instant',block:'start'});
+    document.title = pageTitle;
+  }
+  function renderCategory(category){
+    showScreen('category');
+    scrollToScreenStart();
+    categoryProjects.classList.toggle('is-campaigns', category.id === 'campanas');
+    categoryProjects.classList.toggle('is-animation', category.id === 'animacion');
+    categoryProjects.classList.toggle('is-illustration', category.id === 'ilustracion');
+    categoryTitle.textContent = category.name;
+    categorySummary.textContent = category.projects.length ? category.projects.length + (category.projects.length === 1 ? ' proyecto' : ' proyectos') : 'En preparación';
+    categoryProjects.innerHTML = category.projects.length ? category.projects.map(function(project){
+      var cover = project.cover || project.images[0] || '';
+      var preview = cover ? '<img src="' + cover + '" alt="Vista previa de ' + project.title + '" loading="lazy">' : project.videos && project.videos.length ? '<video class="proj-preview-video" muted autoplay loop playsinline preload="metadata" aria-hidden="true"><source src="' + project.videos[0] + '" type="' + videoMimeType(project.videos[0]) + '"></video>' : '<div class="proj-placeholder" aria-hidden="true">Imágenes próximamente</div>';
+      return '<a class="proj proj-card' + (project.id === 'califia-farms' ? ' proj-card--califia' : '') + (project.id === 'zerena' ? ' proj-card--zerena' : '') + (project.id === 'cartel-filiaz' ? ' proj-card--filiaz' : '') + (project.id === 'feria' ? ' proj-card--feria' : '') + '" href="#proyecto/' + category.id + '/' + project.id + '" aria-label="Abrir proyecto ' + project.title + '">' + preview + '<span class="proj-caption"><strong>' + project.title + '</strong></span></a>';
+    }).join('') : '<p class="empty-category">Próximamente agregaré aquí mis proyectos de animación.</p>';
+    document.title = category.name + ' · Portafolio de Sofía Ramos';
+  }
+  function renderProject(category, project){
+    showScreen('project');
+    scrollToScreenStart();
+    projectTitle.textContent = project.title;
+    projectCategoryName.textContent = category.name;
+    projectDescription.textContent = project.description || 'La descripción y el concepto creativo de este proyecto se agregarán aquí.';
+    projectDescription.classList.toggle('is-placeholder', !project.description);
+    projectDetailHead.classList.toggle('is-astronaut', project.id === 'personaje-3d');
+    projectDetailHead.classList.toggle('is-califia', project.id === 'califia-farms');
+    projectImages.classList.toggle('is-no-crop', project.id === 'baygon' || project.id === 'kleenex-abstracto' || project.id === 'sapore');
+    projectImages.classList.toggle('is-astronaut', project.id === 'personaje-3d');
+    projectImages.classList.toggle('is-zerena', project.id === 'zerena');
+    projectImages.classList.toggle('is-panes-video', project.id === 'bolsa-de-lona');
+    projectImages.classList.toggle('is-feria', project.id === 'feria');
+    projectBack.href = '#categoria/' + category.id;
+    var projectMedia = project.images.map(function(src, index){
+      return '<figure><img src="' + src + '" alt="' + project.title + ' · imagen ' + (index + 1) + '" loading="' + (index < 2 ? 'eager' : 'lazy') + '"></figure>';
+    }).concat((project.videos || []).map(function(src, index){
+      return '<figure class="is-video"><video controls playsinline preload="metadata" aria-label="' + project.title + ' · video ' + (index + 1) + '"><source src="' + src + '" type="' + videoMimeType(src) + '">Tu navegador no puede reproducir este video.</video></figure>';
+    }));
+    projectImages.innerHTML = projectMedia.length ? projectMedia.join('') : '<p class="empty-category">Las imágenes de este proyecto se agregarán próximamente.</p>';
+    projectImages.querySelectorAll('img').forEach(function(image){
+      function preservePortrait(){
+        if (image.naturalWidth && image.naturalHeight && image.naturalWidth < image.naturalHeight) {
+          var frame = image.closest('figure');
+          frame.classList.add('is-portrait');
+          frame.style.aspectRatio = image.naturalWidth + ' / ' + image.naturalHeight;
+          image.style.objectFit = 'contain';
+        }
+      }
+      image.addEventListener('load', preservePortrait);
+      if (image.complete) preservePortrait();
+    });
+    document.title = project.title + ' · ' + category.name + ' · Portafolio de Sofía Ramos';
+  }
+  function route(){
+    var parts = location.hash.replace(/^#/, '').split('/');
+    if (parts[0] === 'categoria' && parts[1]) {
+      var category = findCategory(parts[1]);
+      if (category) return renderCategory(category);
+    }
+    if (parts[0] === 'proyecto' && parts[1] && parts[2]) {
+      var projectCategory = findCategory(parts[1]);
+      var project = findProject(projectCategory, parts[2]);
+      if (project) return renderProject(projectCategory, project);
+    }
+    renderHome();
+  }
+  homeOrder.map(findCategory).filter(Boolean).forEach(function(category){
+    var firstProject = category.projects[0];
+    var preview = category.cover || (firstProject && (firstProject.cover || firstProject.images[0]));
+    var previewVideo = !preview && firstProject && firstProject.videos && firstProject.videos[0];
+    var tile = document.createElement('a');
+    tile.className = 'category-tile' + (preview || previewVideo ? '' : ' is-empty');
+    tile.dataset.category = category.id;
+    tile.href = '#categoria/' + category.id;
+    tile.setAttribute('aria-label', 'Ver proyectos de ' + category.name);
+    tile.innerHTML = (preview ? '<img src="' + preview + '" alt="" loading="lazy">' : previewVideo ? '<video muted autoplay loop playsinline preload="metadata" aria-hidden="true"><source src="' + previewVideo + '" type="' + videoMimeType(previewVideo) + '"></video>' : '') + '<div class="category-info"><span>' + category.name + '</span><small>' + (category.projects.length ? category.projects.length + (category.projects.length === 1 ? ' proyecto' : ' proyectos') : 'Próximamente') + '</small></div>';
+    categoryGrid.appendChild(tile);
+  });
+  var categoryPrev = document.getElementById('categoryPrev');
+  var categoryNext = document.getElementById('categoryNext');
+  function scrollCategoryGallery(direction){categoryGrid.scrollBy({left:direction * categoryGrid.clientWidth * .72,behavior:'smooth'});}
+  categoryPrev.addEventListener('click',function(){scrollCategoryGallery(-1);});
+  categoryNext.addEventListener('click',function(){scrollCategoryGallery(1);});
+  categoryGrid.addEventListener('wheel',function(event){
+    if(event.shiftKey && Math.abs(event.deltaY) > Math.abs(event.deltaX)){
+      event.preventDefault();
+      categoryGrid.scrollLeft += event.deltaY;
+    }
+  },{passive:false});
+  window.addEventListener('hashchange', route);
+  route();
+})();
+
+(function(){
+  document.getElementById('year').textContent = new Date().getFullYear();
+  var btn = document.getElementById('menuBtn'), nav = document.getElementById('mainNav');
+  btn.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      if (nav.classList.contains('open')) {
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  });
+  var links = Array.prototype.slice.call(document.querySelectorAll('nav.main a'));
+  var map = {};
+  links.forEach(function(a){ map[a.getAttribute('href')] = a; });
+  if ('IntersectionObserver' in window) {
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (e.isIntersecting) {
+          links.forEach(function(a){ a.removeAttribute('aria-current'); });
+          var a = map['#' + e.target.id]; if (a) a.setAttribute('aria-current', 'true');
+        }
+      });
+    }, {rootMargin: '-40% 0px -55% 0px'});
+    ['sobre-mi','educacion','proyectos','habilidades','herramientas','contacto'].forEach(function(id){
+      var el = document.getElementById(id); if (el) obs.observe(el);
+    });
+  }
+})();
+</script>
+</body>
+</html>
