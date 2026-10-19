@@ -5,7 +5,7 @@ window.portfolioCategories = [
     "projects": [
       {
         "id": "tipognoma-breaking-bad",
-        "title": "Tipognoma de Breaking Bad",
+        "title": "Tipognoma de Breaking Bad",
         "description": "Proyecto realizado durante el sexto semestre que explora la tipografía a través de una secuencia animada inspirada en la serie de televisión Breaking Bad. Se utilizaron tipografías relacionadas con su identidad visual y la animación se desarrolló en Adobe After Effects.",
         "images": [],
         "videos": [
@@ -24,7 +24,7 @@ window.portfolioCategories = [
       },
       {
         "id": "el-guardian-de-mis-suenos",
-        "title": "El guardián de mis sueños",
+        "title": "El guardián de mis sueños",
         "description": "Animación realizada en Procreate durante el quinto semestre. Cuenta la historia de una niña que tiene pesadillas y encuentra protección en su perro, quien la ayuda a enfrentar sus miedos.",
         "images": [],
         "videos": [
@@ -109,7 +109,7 @@ window.portfolioCategories = [
       {
         "id": "collage",
         "title": "Collage",
-        "description": "Collage digital creado en Photoshop durante el tercer semestre, a partir de recortes de revistas. La composición se desarrolló como recurso visual para el contenido de un libro.",
+        "description": "Collage digital creado en Photoshop durante el tercer semestre, a partir de recortes de revistas. La composición se desarrolló como recurso visual para el contenido de un libro.",
         "images": [
           "assets/img/ilustracion/collage/Captura de pantalla 2026-10-15 a la(s) 8.14.23 p.m..png",
           "assets/img/ilustracion/collage/Captura de pantalla 2026-10-15 a la(s) 8.14.32 p.m..png",
@@ -244,7 +244,7 @@ window.portfolioCategories = [
       {
         "id": "cartel-filiaz",
         "title": "Cartel FILIAZ",
-        "description": "Propuesta de rediseño visual para la Feria Internacional del Libro Infantil y Juvenil. El proyecto, realizado durante el sexto semestre, incluye la ilustración del cartel en Procreate y la reinterpretación de la identidad gráfica del evento.",
+        "description": "Propuesta de rediseño visual para la Feria Internacional del Libro Infantil y Juvenil. El proyecto, realizado durante el sexto semestre, incluye la ilustración del cartel en Procreate y la reinterpretación de la identidad gráfica del evento.",
         "images": [
           "assets/img/campanas/cartel_filiaz/Captura de pantalla 2026-10-02 a la(s) 2.00.58 p.m..png",
           "assets/img/campanas/cartel_filiaz/Captura de pantalla 2026-10-02 a la(s) 2.01.18 p.m..png",
@@ -295,6 +295,16 @@ window.portfolioCategories = [
           "assets/img/editorial/revista_las_mujeres/Las mujeres y el paso del tiempo.png"
         ],
         "cover": "assets/img/editorial/revista_las_mujeres/Las mujeres y el paso del tiempo.png"
+      },
+      {
+        "id": "forros-de-libros",
+        "title": "Forros de libros",
+        "description": "Diseño e ilustración de portadas para una colección de libros, desarrollado durante el tercer semestre. La propuesta explora la narrativa visual a través de ilustraciones originales que reflejan la atmósfera y la esencia de cada obra.",
+        "images": [
+          "assets/img/editorial/forros/Trilogía de Poe_ edición extraordinaria.png",
+          "assets/img/editorial/forros/Mockup de cuentos de Lovecraft.png"
+        ],
+        "cover": "assets/img/editorial/forros/Trilogía de Poe_ edición extraordinaria.png"
       }
     ]
   },
