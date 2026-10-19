@@ -5,6 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Portafolio de Sofía Ramos Ferra, diseñadora gráfica digital: sobre mí, educación, proyectos, habilidades, herramientas y contacto.">
 <title>Sofía Ramos Ferra · Diseñadora gráfica digital</title>
+<script>
+(function(){
+  var navigation = performance.getEntriesByType && performance.getEntriesByType('navigation')[0];
+  var isReload = navigation ? navigation.type === 'reload' : !!(performance.navigation && performance.navigation.type === 1);
+  if (!isReload) return;
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.addEventListener('pageshow', function(){
+    window.scrollTo(0, 0);
+    requestAnimationFrame(function(){
+      window.scrollTo(0, 0);
+      if ('scrollRestoration' in history) history.scrollRestoration = 'auto';
+    });
+  }, {once:true});
+})();
+</script>
 <!--
   FUENTES DE VERDAD
   Contenido y orden: CV.md (desde Arquitectura-CV.docx)
@@ -76,7 +91,8 @@ img{max-width:100%;height:auto}
 .logo-intro{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;width:100%;height:100%;padding:24px;margin:0;overflow:hidden;background:rgba(249,247,239,.9);opacity:1;visibility:visible;pointer-events:auto;transition:opacity .75s ease,visibility 0s linear 0s}
 .logo-intro.is-leaving{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .75s ease,visibility 0s linear .75s}
 .logo-intro video{display:block;width:min(96vw,1500px);height:min(92vh,900px);object-fit:contain;object-position:center;background:transparent;border:0;border-radius:0;box-shadow:none;transform:scale(1.2)}
-@media(max-width:600px){.logo-intro{padding:12px}.logo-intro video{width:96vw;height:72vh;transform:scale(1.3)}}
+.logo-intro-fallback{display:block;width:min(70vw,760px);max-height:60vh;object-fit:contain}
+@media(max-width:767px){.logo-intro{padding:12px}.logo-intro video{width:96vw;height:72vh;transform:scale(1.3)}.logo-intro-fallback{width:min(88vw,520px);max-height:55vh}}
 @media(prefers-reduced-motion:reduce){.logo-intro,.logo-intro.is-leaving{transition:none}}
 nav.main{margin-left:auto}
 nav.main ul{display:flex;gap:2px;list-style:none;margin:0;padding:0;flex-wrap:wrap}
@@ -107,6 +123,9 @@ section.block#sobre-mi{border-top:1px solid var(--colors-border-subtle)}
 #sobre-mi,#educacion{position:relative;z-index:1}
 #sobre-mi p{max-width:70ch}
 .sec-head h2{font-family:'Playwrite US Trad',cursive;font-size:clamp(28px,3.2vw,38px);font-weight:350;line-height:1.4;margin:0 0 var(--sp-md)}
+.typing-title{position:relative}
+.typing-title__reserve{visibility:hidden;white-space:pre-wrap}
+.typing-title__live{position:absolute;inset:0;display:block;white-space:pre-wrap;pointer-events:none}
 .sec-head p{margin:0 0 var(--sp-lg);color:var(--colors-muted);font-size:var(--fs-caption);max-width:80ch}
 h3{font-size:var(--fs-sub);margin:var(--sp-xl) 0 var(--sp-md)}
 .card{background:var(--colors-background);border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);box-shadow:var(--shadow-card);padding:var(--sp-lg)}
@@ -120,15 +139,14 @@ h3{font-size:var(--fs-sub);margin:var(--sp-xl) 0 var(--sp-md)}
 .category-gallery-controls button{width:38px;height:38px;border:1px solid var(--colors-border-subtle);border-radius:var(--r-circle);background:var(--colors-background);color:var(--colors-primary);font:inherit;font-size:20px;line-height:1;cursor:pointer;transition:background .18s,color .18s,border-color .18s}
 .category-gallery-controls button:hover{background:var(--colors-primary);border-color:var(--colors-primary);color:var(--colors-ink-on-primary)}
 .category-tile{position:relative;display:flex;flex:0 0 clamp(360px,39vw,520px);flex-direction:column;justify-content:flex-start;width:clamp(360px,39vw,520px);height:clamp(480px,48vw,620px);min-width:0;min-height:0;padding:0;overflow:visible;scroll-snap-align:start;text-align:left;text-decoration:none;background:transparent;border:0;border-radius:0;color:var(--colors-primary);font:inherit;cursor:pointer;transition:transform .18s}
-.category-tile:hover{transform:translateY(-3px)}
 .category-tile:focus-visible,.proj-card:focus-visible{outline:3px solid var(--colors-primary);outline-offset:3px}
 .category-tile:after{content:"";position:absolute;inset:0;background:transparent;pointer-events:none}
-.category-tile img,.category-tile video{position:relative;inset:auto;display:block;flex:1 1 auto;width:100%;height:calc(100% - 54px);min-height:0;object-fit:cover;background:var(--colors-overlay);border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);transition:transform .25s}
+.category-tile img,.category-tile video{position:relative;inset:auto;display:block;flex:1 1 auto;width:100%;height:calc(100% - 54px);min-height:0;object-fit:cover;background:var(--colors-overlay);border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);transition:transform .3s ease}
 .category-tile[data-category="campanas"] img{width:100%;height:calc(100% - 54px);max-width:none;object-fit:cover;object-position:center}
 .category-tile.is-empty:before{content:"✳";position:absolute;inset:52px 0 0;display:grid;place-items:center;border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);background:linear-gradient(135deg,#17385b,#315b7d);font-size:clamp(42px,7vw,88px);font-weight:300;color:rgba(255,255,255,.28)}
-.category-tile:hover img,.category-tile:hover video{transform:scale(1.035)}
-.category-info{position:relative;z-index:1;flex:0 0 auto;width:100%;padding:0 0 10px;background:transparent}
-.category-tile span{position:relative;z-index:1;display:block;padding:0;color:var(--colors-primary);font-size:clamp(16px,2vw,24px);font-weight:700;text-shadow:none}
+.category-info{position:relative;z-index:1;flex:0 0 auto;width:100%;padding:8px 0 10px;background:transparent}
+.category-tile span{position:relative;z-index:1;display:block;padding:0;color:var(--colors-primary);font-size:clamp(16px,2vw,24px);font-weight:700;text-shadow:none;text-transform:uppercase}
+.category-tile span{transition:transform .3s ease,color .3s ease}
 .category-tile small{display:none}
 .proj-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-flow:dense;gap:var(--sp-lg)}
 .empty-category{grid-column:1/-1;margin:0;padding:var(--sp-lg);color:var(--colors-muted);background:var(--colors-surface);border:1px dashed var(--colors-border-subtle);border-radius:var(--r-md)}
@@ -145,8 +163,8 @@ h3{font-size:var(--fs-sub);margin:var(--sp-xl) 0 var(--sp-md)}
 .proj-grid.is-illustration{display:block;columns:2;column-gap:var(--sp-lg)}
 .proj-grid.is-illustration .proj{display:inline-block;width:100%;margin:0 0 var(--sp-lg);break-inside:avoid}
 .proj{background:var(--colors-surface);border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);overflow:hidden;margin:0;box-shadow:var(--shadow-card)}
-.proj-card{display:block;color:inherit;text-decoration:none;transition:transform .18s,border-color .18s}
-.proj-card:hover{transform:translateY(-3px);border-color:var(--colors-primary)}
+.proj-card{display:block;color:inherit;text-decoration:none;transition:transform .3s ease,border-color .3s ease}
+.proj-card img,.proj-card video{transition:transform .3s ease}
 .proj img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--colors-surface)}
 .proj-preview-video{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:#111;pointer-events:none}
 .proj-card--califia img{aspect-ratio:4/5;object-fit:contain;background:#f3eee8}
@@ -155,7 +173,16 @@ h3{font-size:var(--fs-sub);margin:var(--sp-xl) 0 var(--sp-md)}
 .proj-card--filiaz img{object-position:center 60%}
 .proj-placeholder{display:grid;place-items:center;aspect-ratio:4/3;padding:var(--sp-lg);background:linear-gradient(135deg,#17385b,#315b7d);color:var(--colors-ink-on-primary);text-align:center;font-weight:600}
 .proj-caption{display:block;padding:var(--sp-md);font-size:var(--fs-caption);color:var(--colors-muted)}
-.proj-caption strong{display:block;color:var(--colors-primary);font-size:16px;margin-bottom:4px}
+.proj-caption strong{display:block;color:var(--colors-primary);font-size:16px;margin-bottom:4px;transition:transform .3s ease,color .3s ease}
+.proj-card:focus-visible{outline-offset:4px}
+@media(hover:hover) and (pointer:fine){
+ .category-tile:hover,.category-tile:focus-visible{transform:translateY(-3px)}
+ .category-tile:hover img,.category-tile:hover video,.category-tile:focus-visible img,.category-tile:focus-visible video{transform:scale(1.035) translateY(-2px)}
+ .category-tile:hover span,.category-tile:focus-visible span{transform:translateY(-2px)}
+ .proj-card:hover,.proj-card:focus-visible{transform:translateY(-3px);border-color:var(--colors-primary)}
+ .proj-card:hover img,.proj-card:hover video,.proj-card:focus-visible img,.proj-card:focus-visible video{transform:scale(1.03) translateY(-2px)}
+ .proj-card:hover .proj-caption strong,.proj-card:focus-visible .proj-caption strong{transform:translateY(-2px)}
+}
 .route-screen{min-height:75vh}
 .route-head{display:flex;flex-direction:column;align-items:flex-start;gap:var(--sp-lg);margin-bottom:var(--sp-2xl)}
 .back-link{display:inline-flex;align-items:center;gap:8px;color:var(--colors-primary);font-weight:700;text-decoration:none;border-bottom:1px solid var(--colors-primary);padding:4px 0}
@@ -169,6 +196,8 @@ h3{font-size:var(--fs-sub);margin:var(--sp-xl) 0 var(--sp-md)}
 .project-detail-description.is-placeholder{color:var(--colors-muted);font-size:var(--fs-body)}
 .project-image-grid{display:block;columns:2;column-gap:var(--sp-lg);margin-top:var(--sp-2xl)}
 .project-image-grid figure{display:inline-block;width:100%;height:auto;margin:0 0 var(--sp-lg);break-inside:avoid;vertical-align:top;background:var(--colors-surface);border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);overflow:hidden}
+.project-image-grid.is-reveal-active figure{opacity:0;transform:translateY(14px);transition:opacity .48s ease,transform .48s cubic-bezier(.22,.7,.25,1);transition-delay:var(--reveal-delay,0ms)}
+.project-image-grid.is-reveal-active figure.is-revealed{opacity:1;transform:translateY(0)}
 .project-image-grid img{display:block;width:100%;height:auto;object-fit:contain;object-position:center;background:#f1efe9}
 .project-image-grid figure.is-video{height:auto}
 .project-image-grid figure.is-video video{display:block;width:100%;height:auto;background:#111}
@@ -192,17 +221,21 @@ h3{font-size:var(--fs-sub);margin:var(--sp-xl) 0 var(--sp-md)}
 .contact-card{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--colors-border-subtle);border-radius:var(--r-md);padding:12px 18px;background:var(--colors-background);box-shadow:var(--shadow-card);font-weight:600;font-size:15px}
 .contact-card .dot{width:28px;height:28px;border-radius:var(--r-circle);background:var(--colors-primary);color:var(--colors-ink-on-primary);display:inline-flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
 .contact-card small{font-weight:500;color:var(--colors-muted)}
-footer{padding:var(--sp-2xl) 0 var(--sp-3xl);font-size:var(--fs-caption);color:var(--colors-muted)}
-footer .wrap{display:flex;gap:var(--sp-sm);flex-wrap:wrap}
+footer{position:relative;isolation:isolate;min-height:clamp(280px,34vw,480px);overflow:hidden;padding:var(--sp-2xl) 0 var(--sp-3xl);font-size:var(--fs-caption);color:var(--colors-muted)}
+footer:before{content:"";position:absolute;inset:0;z-index:-1;background:url('assets/img/pie.jpg') center bottom / cover no-repeat;pointer-events:none}
+footer .wrap{position:relative;z-index:1;display:flex;gap:var(--sp-sm);flex-wrap:wrap}
 /* ---------- escritorio ---------- */
 @media(max-width:900px){.proj-grid .proj,.proj-grid .proj:nth-child(n){grid-column:span 6}.proj-grid.is-animation{grid-template-columns:repeat(2,minmax(0,1fr))}.proj-grid.is-animation .proj,.proj-grid.is-animation .proj:nth-child(n){grid-column:auto}.project-detail-head{grid-template-columns:1fr}}
 @media(max-width:767px){
  #sobre-mi p{max-width:calc(100% - 90px)}
- .hero{min-height:calc(100svh - 62px);padding:40px 0 36px}
- .hero-grid{grid-template-columns:1fr;gap:32px}.hero-copy{padding:0}.hero h1{font-size:clamp(46px,12vw,74px);white-space:normal;margin-bottom:14px}.hero .role{margin-bottom:16px}.hero p.lead{margin-bottom:22px}
+ .hero{min-height:0;align-items:flex-start;padding:90vw 0 36px}
+ .hero:before{top:0;width:100%;height:86vw;background-size:auto 86vw;background-position:right top}
+ .hero-grid{grid-template-columns:1fr;gap:0}.hero-copy{width:100%;max-width:none;padding:0}.kicker{font-size:clamp(24px,6.5vw,32px)}.hero .role{font-size:clamp(16px,4.4vw,19px);line-height:1.3;margin-bottom:16px}.hero h1{font-size:clamp(40px,10vw,58px);line-height:1.15;white-space:normal;margin-bottom:14px}.hero p.lead{font-size:15px;line-height:1.45;margin-bottom:22px}
+ .btn-row{gap:12px}.btn{flex:1 1 0;min-width:0;padding:9px 10px;font-size:clamp(12px,3.4vw,14px);white-space:nowrap}
  .project-categories{gap:10px;padding-bottom:12px}.category-tile{flex-basis:min(90vw,420px);width:min(90vw,420px);height:clamp(440px,120vw,560px)}.category-gallery-controls{display:none}.proj-grid .proj,.proj-grid .proj:nth-child(n){grid-column:span 12}.proj-grid.is-campaigns,.proj-grid.is-illustration{columns:1}.proj-grid.is-animation{grid-template-columns:1fr}.proj-grid.is-animation .proj,.proj-grid.is-animation .proj:nth-child(n){grid-column:auto}.project-image-grid,.project-image-grid.is-astronaut,.project-image-grid.is-zerena,.project-image-grid.is-feria{columns:1}.project-image-grid.is-panes-video{display:block}.project-image-grid.is-panes-video figure{width:100%;margin:0 0 var(--sp-lg)}.route-head{margin-bottom:var(--sp-xl)}
 }
 @media(prefers-reduced-motion:reduce){.project-categories{scroll-behavior:auto}.category-tile,.category-tile img{transition:none}}
+@media(prefers-reduced-motion:reduce){.category-tile,.category-tile img,.category-tile video,.proj-card,.proj-card img,.proj-card video,.proj-caption strong{transition:none!important}}
 @media(max-width:900px){
   nav.main{display:none}
   nav.main.open{display:block;position:absolute;top:100%;left:0;right:0;background:var(--colors-primary);border-bottom:1px solid var(--colors-primary)}
@@ -237,6 +270,7 @@ footer .wrap{display:flex;gap:var(--sp-sm);flex-wrap:wrap}
     <source src="assets/videos/logo-animado-transparente.webm" type="video/webm; codecs=vp9">
     Tu navegador no puede reproducir este video.
   </video>
+  <img class="logo-intro-fallback" id="logoIntroFallback" src="assets/logo-sofia.png" alt="Sofía" hidden>
  </div>
 
 <main id="contenido" inert aria-hidden="true">
@@ -393,6 +427,13 @@ footer .wrap{display:flex;gap:var(--sp-sm);flex-wrap:wrap}
   var projectDetailHead = document.querySelector('.project-detail-head');
   var projectBack = document.getElementById('projectBack');
   var pageTitle = document.title;
+  var projectMediaObserver;
+  var introHasFinished = false;
+  window.addEventListener('portfolio:intro-finished', function(){
+    if (introHasFinished) return;
+    introHasFinished = true;
+    if (!projectScreen.hidden) animateProjectMedia();
+  });
 
   function findCategory(id){return categories.find(function(category){return category.id === id;});}
   function findProject(category, id){return category && category.projects.find(function(project){return project.id === id;});}
@@ -422,7 +463,27 @@ footer .wrap{display:flex;gap:var(--sp-sm);flex-wrap:wrap}
       var preview = cover ? '<img src="' + cover + '" alt="Vista previa de ' + project.title + '" loading="lazy">' : project.videos && project.videos.length ? '<video class="proj-preview-video" muted autoplay loop playsinline preload="metadata" aria-hidden="true"><source src="' + project.videos[0] + '" type="' + videoMimeType(project.videos[0]) + '"></video>' : '<div class="proj-placeholder" aria-hidden="true">Imágenes próximamente</div>';
       return '<a class="proj proj-card' + (project.id === 'califia-farms' ? ' proj-card--califia' : '') + (project.id === 'zerena' ? ' proj-card--zerena' : '') + (project.id === 'cartel-filiaz' ? ' proj-card--filiaz' : '') + (project.id === 'feria' ? ' proj-card--feria' : '') + '" href="#proyecto/' + category.id + '/' + project.id + '" aria-label="Abrir proyecto ' + project.title + '">' + preview + '<span class="proj-caption"><strong>' + project.title + '</strong></span></a>';
     }).join('') : '<p class="empty-category">Próximamente agregaré aquí mis proyectos de animación.</p>';
+    window.dispatchEvent(new Event('portfolio:category-rendered'));
     document.title = category.name + ' · Portafolio de Sofía Ramos';
+  }
+  function animateProjectMedia(){
+    if (projectMediaObserver) projectMediaObserver.disconnect();
+    projectImages.classList.remove('is-reveal-active');
+    var figures = Array.prototype.slice.call(projectImages.querySelectorAll('figure'));
+    if (!introHasFinished || !figures.length || window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) return;
+    projectImages.classList.add('is-reveal-active');
+    var observer = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      });
+    }, {threshold:0.1,rootMargin:'0px 0px -5% 0px'});
+    projectMediaObserver = observer;
+    figures.forEach(function(figure,index){
+      figure.style.setProperty('--reveal-delay', Math.min(index,6) * 70 + 'ms');
+      observer.observe(figure);
+    });
   }
   function renderProject(category, project){
     showScreen('project');
@@ -445,6 +506,8 @@ footer .wrap{display:flex;gap:var(--sp-sm);flex-wrap:wrap}
       return '<figure class="is-video"><video controls playsinline preload="metadata" aria-label="' + project.title + ' · video ' + (index + 1) + '"><source src="' + src + '" type="' + videoMimeType(src) + '">Tu navegador no puede reproducir este video.</video></figure>';
     }));
     projectImages.innerHTML = projectMedia.length ? projectMedia.join('') : '<p class="empty-category">Las imágenes de este proyecto se agregarán próximamente.</p>';
+    animateProjectMedia();
+    window.dispatchEvent(new Event('portfolio:project-rendered'));
     document.title = project.title + ' · ' + category.name + ' · Portafolio de Sofía Ramos';
   }
   function route(){
@@ -523,6 +586,7 @@ footer .wrap{display:flex;gap:var(--sp-sm);flex-wrap:wrap}
 (function(){
   var intro = document.getElementById('logoIntro');
   var video = document.getElementById('logoIntroVideo');
+  var fallback = document.getElementById('logoIntroFallback');
   var brand = document.querySelector('.brand');
   if (!intro || !video || !brand) return;
   var skip = document.querySelector('.skip');
@@ -549,18 +613,39 @@ footer .wrap{display:flex;gap:var(--sp-sm);flex-wrap:wrap}
     revealTimer = window.setTimeout(function(){
       intro.setAttribute('aria-hidden', 'true');
       lockPage(false);
+      window.dispatchEvent(new Event('portfolio:intro-finished'));
     }, 750);
+  }
+
+  function showLogoFallback(){
+    if (intro.classList.contains('is-leaving')) return;
+    video.pause();
+    video.hidden = true;
+    fallback.hidden = false;
+    window.clearTimeout(revealTimer);
+    revealTimer = window.setTimeout(finishIntro, 1800);
   }
 
   function playIntro(){
     window.clearTimeout(revealTimer);
+    window.scrollTo(0, 0);
+    window.dispatchEvent(new Event('portfolio:logo-intro-started'));
     intro.classList.remove('is-leaving');
     intro.setAttribute('aria-hidden', 'false');
     lockPage(true);
     intro.focus({preventScroll: true});
+    if (window.matchMedia('(max-width: 767px)').matches) {
+      video.pause();
+      video.hidden = true;
+      fallback.hidden = false;
+      revealTimer = window.setTimeout(finishIntro, 1800);
+      return;
+    }
+    video.hidden = false;
+    fallback.hidden = true;
     try { video.currentTime = 0; } catch (error) {}
     var playback = video.play();
-    if (playback && typeof playback.catch === 'function') playback.catch(finishIntro);
+    if (playback && typeof playback.catch === 'function') playback.catch(showLogoFallback);
   }
 
   brand.addEventListener('click', function(event){
@@ -568,8 +653,98 @@ footer .wrap{display:flex;gap:var(--sp-sm);flex-wrap:wrap}
     playIntro();
   });
   video.addEventListener('ended', finishIntro);
-  video.addEventListener('error', finishIntro);
+  video.addEventListener('error', showLogoFallback);
   playIntro();
+})();
+
+(function(){
+  var targets = Array.prototype.slice.call(document.querySelectorAll('.hero h1, .sec-head h2'));
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduceMotion || !targets.length) return;
+  var allTitles = [];
+  var started = false;
+  var observer = 'IntersectionObserver' in window ? new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if (!entry.isIntersecting) return;
+      observer.unobserve(entry.target);
+      typeTitle(entry.target);
+    });
+  }, {threshold:0.35,rootMargin:'0px 0px -8% 0px'}) : null;
+
+  function prepareTitle(element){
+    var title = element.textContent.trim();
+    if (!title) return;
+    if (element.dataset.typingOriginalTitle === title && element.querySelector('.typing-title__live')) return;
+    window.clearTimeout(element._typingTimer);
+    delete element.dataset.typingStarted;
+    delete element.dataset.typingComplete;
+    element.dataset.typingOriginalTitle = title;
+    if (/^H[12]$/.test(element.tagName)) element.setAttribute('aria-label', title);
+    element.classList.add('typing-title');
+    element.textContent = '';
+    var reserve = document.createElement('span');
+    reserve.className = 'typing-title__reserve';
+    reserve.setAttribute('aria-hidden', 'true');
+    reserve.textContent = title;
+    var live = document.createElement('span');
+    live.className = 'typing-title__live';
+    live.setAttribute('aria-hidden', 'true');
+    live.dataset.fullText = title;
+    element.appendChild(reserve);
+    element.appendChild(live);
+    if (allTitles.indexOf(element) === -1) allTitles.push(element);
+    if (started) {
+      if (observer) observer.observe(element);
+      else typeTitle(element);
+    }
+  }
+
+  function typeTitle(element){
+    if (element.dataset.typingStarted === 'true') return;
+    element.dataset.typingStarted = 'true';
+    var live = element.querySelector('.typing-title__live');
+    if (!live) return;
+    var characters = Array.from(live.dataset.fullText);
+    var index = 0;
+    function writeNext(){
+      index += 1;
+      live.textContent = characters.slice(0, index).join('');
+      if (index < characters.length) element._typingTimer = window.setTimeout(writeNext, 68);
+      else {
+        element._typingTimer = null;
+        element.dataset.typingComplete = 'true';
+      }
+    }
+    writeNext();
+  }
+
+  targets.forEach(prepareTitle);
+  function registerProjectTitles(){
+    document.querySelectorAll('#projectTitle, .proj-caption strong').forEach(prepareTitle);
+  }
+  registerProjectTitles();
+  function resetTitlesForIntro(){
+    if (observer) observer.disconnect();
+    allTitles.forEach(function(element){
+      window.clearTimeout(element._typingTimer);
+      element._typingTimer = null;
+      var live = element.querySelector('.typing-title__live');
+      if (live) live.textContent = '';
+      delete element.dataset.typingStarted;
+      delete element.dataset.typingComplete;
+    });
+    started = false;
+  }
+  function beginWhenVisible(){
+    if (started) return;
+    started = true;
+    if (observer) allTitles.forEach(function(element){observer.observe(element)});
+    else allTitles.forEach(typeTitle);
+  }
+  window.addEventListener('portfolio:logo-intro-started', resetTitlesForIntro);
+  window.addEventListener('portfolio:intro-finished', beginWhenVisible);
+  window.addEventListener('portfolio:category-rendered', registerProjectTitles);
+  window.addEventListener('portfolio:project-rendered', registerProjectTitles);
 })();
 </script>
 </body>
